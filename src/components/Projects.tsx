@@ -2,6 +2,71 @@ import { useEffect, useRef, useState } from 'react';
 import { PROJECTS } from '../data/portfolioData';
 import { ExternalLink, Github, X, ChevronRight, Sparkles } from 'lucide-react';
 
+function StatusBadge({ status }: { status: string }) {
+  const ready = status !== 'under-work';
+  const label = status === 'showcase-ready' ? 'Showcase Ready' : ready ? 'Ready' : 'In Progress';
+  return (
+    <span
+      className={`inline-flex items-center gap-1.5 px-2 py-1 text-[10px] font-mono rounded border ${
+        ready
+          ? 'bg-emerald-500/10 text-emerald-300 border-emerald-500/20'
+          : 'bg-amber-500/10 text-amber-300 border-amber-500/20'
+      }`}
+    >
+      <span className={`w-1.5 h-1.5 rounded-full ${ready ? 'bg-emerald-400' : 'bg-amber-400'}`} />
+      {label}
+    </span>
+  );
+}
+
+function RowCard({
+  project,
+  onClick,
+  amber,
+}: {
+  project: (typeof PROJECTS)[0];
+  onClick: () => void;
+  amber?: boolean;
+}) {
+  return (
+    <div
+      className={`glass-card p-5 hover-lift group cursor-pointer ${amber ? 'border-amber-500/25' : ''}`}
+      onClick={onClick}
+    >
+      <div className="flex items-start justify-between gap-4">
+        <div className="flex-1">
+          <div className="flex flex-wrap items-center gap-2 mb-1">
+            <h4 className="font-semibold text-slate-100 group-hover:text-sky-400 transition-colors">
+              {project.title}
+            </h4>
+            <StatusBadge status={project.status} />
+          </div>
+          <p className="text-sm text-slate-400 line-clamp-2 mb-3">{project.description}</p>
+          <div className="flex flex-wrap gap-1.5">
+            {project.tech.slice(0, 3).map((t) => (
+              <span key={t} className="px-2 py-0.5 text-[10px] font-mono bg-white/5 text-slate-400 rounded">
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+        {project.github && (
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-500 hover:text-sky-400 transition-colors"
+            onClick={(e) => e.stopPropagation()}
+            aria-label="View on GitHub"
+          >
+            <Github className="w-4 h-4" />
+          </a>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export function Projects() {
   const sectionRef = useRef<HTMLElement>(null);
   const [selectedProject, setSelectedProject] = useState<typeof PROJECTS[0] | null>(null);
@@ -27,7 +92,8 @@ export function Projects() {
   }, []);
 
   const featured = PROJECTS.filter((p) => p.featured);
-  const others = PROJECTS.filter((p) => !p.featured);
+  const others = PROJECTS.filter((p) => !p.featured && p.status !== 'under-work');
+  const inProgress = PROJECTS.filter((p) => p.status === 'under-work');
 
   return (
     <section id="projects" ref={sectionRef} className="relative py-24 md:py-32 bg-[#0f172a]">
@@ -68,10 +134,13 @@ export function Projects() {
                     </span>
                   </div>
                 </div>
-                <div className="absolute top-3 right-3">
-                  <span className="px-2 py-1 text-[10px] font-mono bg-sky-500/20 text-sky-300 rounded border border-sky-500/20">
-                    {project.client}
-                  </span>
+                <div className="absolute inset-x-3 top-3 flex items-start justify-between gap-2">
+                  <StatusBadge status={project.status} />
+                  {project.client && (
+                    <span className="px-2 py-1 text-[10px] font-mono bg-sky-500/20 text-sky-300 rounded border border-sky-500/20">
+                      {project.client}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="p-6">
@@ -111,44 +180,29 @@ export function Projects() {
             </h3>
             <div className="grid md:grid-cols-2 gap-4">
               {others.map((project) => (
-                <div
+                <RowCard
                   key={project.id}
-                  className="glass-card p-5 hover-lift group cursor-pointer"
+                  project={project}
                   onClick={() => setSelectedProject(project)}
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex-1">
-                      <h4 className="font-semibold text-slate-100 group-hover:text-sky-400 transition-colors mb-1">
-                        {project.title}
-                      </h4>
-                      <p className="text-sm text-slate-400 line-clamp-2 mb-3">
-                        {project.description}
-                      </p>
-                      <div className="flex flex-wrap gap-1.5">
-                        {project.tech.slice(0, 3).map((t) => (
-                          <span
-                            key={t}
-                            className="px-2 py-0.5 text-[10px] font-mono bg-white/5 text-slate-400 rounded"
-                          >
-                            {t}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-slate-500 hover:text-sky-400 transition-colors"
-                        onClick={(e) => e.stopPropagation()}
-                        aria-label="View on GitHub"
-                      >
-                        <Github className="w-4 h-4" />
-                      </a>
-                    )}
-                  </div>
-                </div>
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {inProgress.length > 0 && (
+          <div className="scroll-reveal mt-12">
+            <h3 className="text-sm font-mono text-amber-400 uppercase tracking-widest mb-6">
+              In Progress
+            </h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              {inProgress.map((project) => (
+                <RowCard
+                  key={project.id}
+                  project={project}
+                  onClick={() => setSelectedProject(project)}
+                  amber
+                />
               ))}
             </div>
           </div>
@@ -172,6 +226,9 @@ export function Projects() {
                 <h3 className="text-2xl font-bold text-slate-100 mt-1">
                   {selectedProject.title}
                 </h3>
+                <div className="mt-2">
+                  <StatusBadge status={selectedProject.status} />
+                </div>
               </div>
               <button
                 onClick={() => setSelectedProject(null)}

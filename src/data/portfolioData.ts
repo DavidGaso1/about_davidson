@@ -129,7 +129,8 @@ export const PROJECTS = [
     category: "Automation",
     featured: true,
     github: null,
-    image: "/projects/zenko-leads.png"
+    image: "/projects/bolt_diy_mock_ui.png",
+    status: "ready"
   },
   {
     id: 2,
@@ -147,7 +148,8 @@ export const PROJECTS = [
     category: "Automation",
     featured: true,
     github: null,
-    image: "/projects/theldoforce-ops.png"
+    image: null,
+    status: "ready"
   },
   {
     id: 3,
@@ -165,25 +167,27 @@ export const PROJECTS = [
     category: "Infrastructure",
     featured: true,
     github: null,
-    image: "/projects/aws-monitor.png"
+    image: null,
+    status: "ready"
   },
   {
     id: 4,
     title: "VIZO-RAG System",
     client: "ViZO Technology Limited",
-    description: "Enterprise-grade Retrieval-Augmented Generation system featuring vector embeddings and semantic document search for organizational knowledge management.",
-    longDescription: "A production RAG system built for ViZO Technologies that enables semantic search across organizational knowledge bases. Integrates vector embeddings for intelligent document retrieval and contextual response generation, supporting internal teams with instant access to institutional knowledge.",
-    tech: ["Python", "LangChain", "OpenAI", "Supabase", "Vector Embeddings"],
+    description: "A source-grounded RAG assistant with ChromaDB vector search, Hugging Face embeddings, and Gemini-backed answers — refusing instead of guessing when evidence is missing.",
+    longDescription: "A terminal-based RAG system that ingests a synthetic Markdown corpus, chunks and embeds it with all-MiniLM-L6-v2, persists vectors in ChromaDB, and answers questions strictly from retrieved evidence using Gemini — refusing instead of guessing when evidence is missing. Includes query expansion for broad questions, a configurable retrieval cap, conversation memory, and a 20-test offline suite that needs no API key.",
+    tech: ["Python", "LangChain", "ChromaDB", "Gemini", "Hugging Face Embeddings"],
     highlights: [
-      "Vector-based semantic document search",
-      "Integration with organizational knowledge bases",
-      "Contextual response generation",
-      "Production deployment with monitoring"
+      "ChromaDB vector search with similarity-threshold filtering",
+      "Query expansion for broad catalog questions",
+      "Source-grounded answers — refuses when evidence is missing",
+      "Offline test suite: 20 tests, no API key required"
     ],
     category: "AI System",
     featured: false,
     github: "https://github.com/DavidGaso1/VIZO-RAG",
-    image: "/projects/vizo-rag.png"
+    image: "/projects/vizo_rag_mock_ui.png",
+    status: "under-work"
   },
   {
     id: 5,
@@ -200,7 +204,85 @@ export const PROJECTS = [
     category: "Web Development",
     featured: false,
     github: "https://github.com/DavidGaso1/davidson-s-ai-portfolio",
-    image: "/projects/portfolio.png"
+    image: "/projects/portfolio_mock_ui.png",
+    status: "ready"
+  },
+  {
+    id: 6,
+    title: "AI Job Application Agent",
+    client: null,
+    description: "A production-hardened AI job-application workspace with a FastAPI backend, LangGraph orchestration, authenticated Chrome extension, database persistence, and fail-safe browser preparation.",
+    longDescription: "An agentic pipeline that researches job postings, analyzes candidate fit, and tailors resumes and cover letters through Gemini, Groq, and OpenRouter fallback paths. The production-readiness pass added Google OAuth claim validation, user-scoped SQLAlchemy persistence, structured errors, request tracing, health checks, strict extension/API contracts, and a manual-review gate that keeps prepared applications at READY_TO_SUBMIT until a human verifies the final action. Published-extension OAuth and live job-site E2E remain deployment-specific follow-up validation.",
+    tech: ["FastAPI", "LangGraph", "SQLAlchemy", "Playwright", "Google OAuth", "Chrome Extension", "Gemini", "Groq"],
+    highlights: [
+      "111 backend tests + 7 extension build/configuration tests, with Ruff and strict mypy passing",
+      "Google OAuth validates aud, sub, email, and email_verified before issuing an app JWT",
+      "SQLite/Postgres-ready persistence with user-scoped profiles, applications, and documents",
+      "Request IDs, structured errors, liveness/readiness checks, upload limits, and retention cleanup",
+      "Manual-review safety gate: dry runs never submit and prepared forms remain READY_TO_SUBMIT"
+    ],
+    category: "AI System",
+    featured: false,
+    github: "https://github.com/DavidGaso1/Job-Agent",
+    image: "/projects/job_agent_mock_ui.png",
+    status: "showcase-ready"
+  },
+  {
+    id: 7,
+    title: "HealthyLife Healthcare Data Project",
+    client: null,
+    description: "A healthcare data engineering toolkit for generating, patching, and validating mock patient, admission, and diagnosis datasets with SQL inserts.",
+    longDescription: "Comprehensive scripts that generate mock healthcare data, patch and validate foreign-key relationships, and run SQL inserts for patient, admission, and diagnosis records — a robust sandbox for healthcare data engineering, analysis, and research pipelines.",
+    tech: ["Python", "SQL", "MySQL", "Data Validation"],
+    highlights: [
+      "Mock patient, admission, and diagnosis data generation",
+      "Foreign-key patching and validation",
+      "Modular Python data manipulation scripts",
+      "Secure handling of sensitive and test data"
+    ],
+    category: "Data Engineering",
+    featured: false,
+    github: "https://github.com/DavidGaso1/Health-Care-Repo",
+    image: null,
+    status: "under-work"
+  },
+  {
+    id: 8,
+    title: "NutriDine — AI Restaurant Recommendation",
+    client: null,
+    description: "An AI-powered restaurant recommendation system with hybrid collaborative + content-based filtering, location and time awareness, and a health-conscious RAG advisor.",
+    longDescription: "NutriDine blends collaborative and content-based filtering with location- and time-aware cues to recommend restaurants around Abuja, Nigeria. Includes an AI Health Advisor with RAG for personalized nutrition analysis, allergen-aware menu analysis, and real-time learning from user interactions.",
+    tech: ["FastAPI", "PostgreSQL", "React", "ChromaDB", "Gemini", "Groq"],
+    highlights: [
+      "Hybrid collaborative + content-based filtering",
+      "Location- and time-aware recommendations",
+      "AI Health Advisor with RAG for nutrition analysis",
+      "Real-time learning from user interactions"
+    ],
+    category: "AI System",
+    featured: false,
+    github: "https://github.com/DavidGaso1/restaurant-recommendation-system",
+    image: null,
+    status: "under-work"
+  },
+  {
+    id: 9,
+    title: "HealthRAG — Nigeria-First Health Triage",
+    client: null,
+    description: "A synthetic-only, Nigeria-first health triage prototype with rule-first emergency detection, retrieval-grounded educational answers, and a fail-closed privacy boundary.",
+    longDescription: "A deterministic health triage CLI that pairs a rule-first emergency and urgent signal layer (11 rules) with retrieval-grounded educational answers in Pidgin-friendly phrasing. Synthetic-only by design: it refuses real patient input, never diagnoses or prescribes, and ships with an offline release gate that enforces the synthetic boundary. Split out of VIZO-RAG into its own local-only repository — intentionally no remote.",
+    tech: ["Python", "YAML", "RAG"],
+    highlights: [
+      "Rule-first triage: 11 emergency and urgent signal rules checked before retrieval runs",
+      "Fail-closed privacy boundary — requires synthetic input, never real patient data",
+      "Retrieval-grounded educational answers with a strict evidence citation gate",
+      "Offline release gate: 55 tests + 16 synthetic evaluation cases, no API key required"
+    ],
+    category: "AI System",
+    featured: false,
+    github: null,
+    image: null,
+    status: "under-work"
   }
 ];
 
