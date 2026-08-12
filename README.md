@@ -1,8 +1,8 @@
 # Davidson Chiemezuo — Agentic AI Developer
 
-**Location:** Abuja, Nigeria · **Email:** [derocton@gmail.com](mailto:derocton@gmail.com) · **Portfolio:** [david.dgi.qzz.io](https://david.dgi.qzz.io) · **GitHub:** [github.com/DavidGaso1](https://github.com/DavidGaso1) · **LinkedIn:** [linkedin.com/in/davidson-ahuruezenma-33a773294](https://linkedin.com/in/davidson-ahuruezenma-33a773294)
+**Location:** Abuja, Nigeria · **Phone:** [+2349061505041](tel:+2349061505041) · **Email:** [ahuruezenmadavidson@gmail.com](mailto:ahuruezenmadavidson@gmail.com) · **Portfolio:** [david.dgi.qzz.io](https://david.dgi.qzz.io) · **GitHub:** [github.com/DavidGaso1](https://github.com/DavidGaso1) · **LinkedIn:** [linkedin.com/in/davidson-ahuruezenma-33a773294](https://linkedin.com/in/davidson-ahuruezenma-33a773294)
 
-[![CI](https://github.com/DavidGaso1/davidson-s-ai-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/DavidGaso1/davidson-s-ai-portfolio/actions/workflows/ci.yml)
+[![CI](https://github.com/DavidGaso1/about_davidson/actions/workflows/ci.yml/badge.svg)](https://github.com/DavidGaso1/about_davidson/actions/workflows/ci.yml)
 
 ---
 
@@ -128,4 +128,4 @@ This repository hosts the portfolio website itself — a modern, interactive sho
 
 ---
 
-*Open to remote AI Developer / AI Automation roles — let's connect at [derocton@gmail.com](mailto:derocton@gmail.com).*
+*Open to remote AI Developer / AI Automation roles — let's connect at [ahuruezenmadavidson@gmail.com](mailto:ahuruezenmadavidson@gmail.com).*

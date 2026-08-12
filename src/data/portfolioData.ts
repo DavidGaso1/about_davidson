@@ -4,7 +4,7 @@ export const PERSONAL_INFO = {
   title: "Agentic AI Developer",
   tagline: "Building intelligent systems, one agent at a time.",
   location: "Abuja, Nigeria",
-  email: "derocton@gmail.com",
+  email: "ahuruezenmadavidson@gmail.com",
   phone: "+2349061505041",
   github: "https://github.com/DavidGaso1",
   linkedin: "https://linkedin.com/in/davidson-ahuruezenma-33a773294",
@@ -203,7 +203,7 @@ export const PROJECTS = [
     ],
     category: "Web Development",
     featured: false,
-    github: "https://github.com/DavidGaso1/davidson-s-ai-portfolio",
+    github: "https://github.com/DavidGaso1/about_davidson",
     image: "/projects/portfolio_mock_ui.png",
     status: "ready"
   },

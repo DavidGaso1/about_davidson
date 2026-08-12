@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { PERSONAL_INFO } from '../data/portfolioData';
-import { Github, Linkedin, Mail, MapPin, Send, CheckCircle } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, Phone, Send, CheckCircle } from 'lucide-react';
 
 export function Contact() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -61,6 +61,15 @@ export function Contact() {
                   <Mail className="w-4 h-4 text-sky-400" />
                 </div>
                 <span className="font-mono text-sm">{PERSONAL_INFO.email}</span>
+              </a>
+              <a
+                href={`tel:${PERSONAL_INFO.phone}`}
+                className="flex items-center gap-3 text-slate-300 hover:text-sky-400 transition-colors group"
+              >
+                <div className="p-2.5 bg-sky-500/10 rounded-lg group-hover:bg-sky-500/20 transition-colors">
+                  <Phone className="w-4 h-4 text-sky-400" />
+                </div>
+                <span className="font-mono text-sm">{PERSONAL_INFO.phone}</span>
               </a>
               <div className="flex items-center gap-3 text-slate-400">
                 <div className="p-2.5 bg-white/5 rounded-lg">
