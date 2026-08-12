@@ -269,17 +269,30 @@ export function Projects() {
               </div>
             </div>
 
-            {selectedProject.github && (
-              <a
-                href={selectedProject.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-sky-500 hover:bg-sky-400 text-[#0f172a] font-semibold rounded-xl transition-colors"
-              >
-                <Github className="w-4 h-4" />
-                View on GitHub
-              </a>
-            )}
+            <div className="mt-6 flex flex-wrap gap-3">
+              {selectedProject.liveUrl && (
+                <a
+                  href={selectedProject.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-sky-500 hover:bg-sky-400 text-[#0f172a] font-semibold rounded-xl transition-colors"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  Live Demo
+                </a>
+              )}
+              {selectedProject.github && (
+                <a
+                  href={selectedProject.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-sky-500/10 hover:bg-sky-500/20 border border-sky-500/30 text-sky-300 font-semibold rounded-xl transition-colors"
+                >
+                  <Github className="w-4 h-4" />
+                  View on GitHub
+                </a>
+              )}
+            </div>
           </div>
         </div>
       )}

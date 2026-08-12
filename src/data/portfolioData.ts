@@ -270,7 +270,7 @@ export const PROJECTS = [
     title: "HealthRAG — Nigeria-First Health Triage",
     client: null,
     description: "A synthetic-only, Nigeria-first health triage prototype with rule-first emergency detection, retrieval-grounded educational answers, and a fail-closed privacy boundary.",
-    longDescription: "A deterministic health triage CLI that pairs a rule-first emergency and urgent signal layer (11 rules) with retrieval-grounded educational answers in Pidgin-friendly phrasing. Synthetic-only by design: it refuses real patient input, never diagnoses or prescribes, and ships with an offline release gate that enforces the synthetic boundary. Split out of VIZO-RAG into its own local-only repository — intentionally no remote.",
+    longDescription: "A deterministic health triage CLI that pairs a rule-first emergency and urgent signal layer (11 rules) with retrieval-grounded educational answers in Pidgin-friendly phrasing. Synthetic-only by design: it refuses real patient input, never diagnoses or prescribes, and ships with an offline release gate that enforces the synthetic boundary. Split out of VIZO-RAG into its own repository with CI and full documentation.",
     tech: ["Python", "YAML", "RAG"],
     highlights: [
       "Rule-first triage: 11 emergency and urgent signal rules checked before retrieval runs",
@@ -280,7 +280,65 @@ export const PROJECTS = [
     ],
     category: "AI System",
     featured: false,
-    github: null,
+    github: "https://github.com/DavidGaso1/HealthRAG",
+    image: null,
+    status: "ready"
+  },
+  {
+    id: 10,
+    title: "AI-News-Update — Automated News Digest",
+    client: null,
+    description: "A fully automated daily AI news digest — cron-fetched from RSS with cross-day dedup, emailed every morning, and deployed as a live dashboard on Vercel. CI-tested pipeline.",
+    longDescription: "An end-to-end automation showcase: GitHub Actions cron runs a Python fetcher that pulls AI news from RSS sources, deduplicates across days using a committed archive (with configurable retention), and sends a formatted email digest to subscribers. Ships with CI tests for dedup and archive merging, and a live public dashboard at ainl.vercel.app.",
+    tech: ["Python", "GitHub Actions", "feedparser", "SMTP", "Vercel"],
+    highlights: [
+      "Daily 6 AM cron with zero-touch deployment to Vercel",
+      "Cross-day dedup seeded from a committed archive with 180-day retention",
+      "Multi-recipient email delivery with subscriber support",
+      "CI-tested: dedup, archive merge, and retention logic all covered"
+    ],
+    category: "Automation",
+    featured: false,
+    github: "https://github.com/DavidGaso1/AI-News-Update",
+    liveUrl: "https://ainl.vercel.app",
+    image: null,
+    status: "showcase-ready"
+  },
+  {
+    id: 11,
+    title: "financial-statement-pipeline",
+    client: null,
+    description: "An extraction pipeline for scanned Nigerian financial statements — OCR, structured output, validation and exporters with full test coverage and CI.",
+    longDescription: "A document-processing pipeline that turns scanned financial statements into structured, validated data. Covers OCR ingestion, number parsing, field detection, validation, confidence scoring, and multiple export formats — with a full test suite and GitHub Actions CI.",
+    tech: ["Python", "OCR", "Pydantic", "pytest", "CI"],
+    highlights: [
+      "End-to-end pipeline: scan to structured, validated output",
+      "Confidence scoring and validation rules on extracted fields",
+      "Full test suite covering parsing, detection, and export",
+      "GitHub Actions CI on every push"
+    ],
+    category: "Data Engineering",
+    featured: false,
+    github: "https://github.com/DavidGaso1/financial-statement-pipeline",
+    image: null,
+    status: "showcase-ready"
+  },
+  {
+    id: 12,
+    title: "R-Medy — Natural Health Solutions",
+    client: null,
+    description: "A modern React/Next.js website for natural health solutions with AI-powered lead capture, secure webhooks, and deployment on Vercel.",
+    longDescription: "A production web application for a natural health solutions brand — modern Next.js frontend with TypeScript and Tailwind, AI-assisted lead capture, secure webhook form integration, and Vercel deployment. Includes comprehensive README and deployment documentation.",
+    tech: ["Next.js", "TypeScript", "Tailwind", "Webhooks"],
+    highlights: [
+      "Modern Next.js + TypeScript frontend",
+      "AI-powered lead capture with webhook integration",
+      "Vercel deployment with production config",
+      "Full documentation and security review included"
+    ],
+    category: "Web Development",
+    featured: false,
+    github: "https://github.com/DavidGaso1/R-Medy",
     image: null,
     status: "ready"
   }
