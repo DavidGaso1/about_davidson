@@ -187,7 +187,7 @@ export const PROJECTS = [
     featured: false,
     github: "https://github.com/DavidGaso1/VIZO-RAG",
     image: "/projects/vizo_rag_mock_ui.png",
-    status: "under-work"
+    status: "ready"
   },
   {
     id: 5,
@@ -244,7 +244,7 @@ export const PROJECTS = [
     featured: false,
     github: "https://github.com/DavidGaso1/Health-Care-Repo",
     image: null,
-    status: "under-work"
+    status: "ready"
   },
   {
     id: 8,
@@ -263,7 +263,7 @@ export const PROJECTS = [
     featured: false,
     github: "https://github.com/DavidGaso1/restaurant-recommendation-system",
     image: null,
-    status: "under-work"
+    status: "ready"
   },
   {
     id: 9,
@@ -282,7 +282,7 @@ export const PROJECTS = [
     featured: false,
     github: null,
     image: null,
-    status: "under-work"
+    status: "ready"
   }
 ];
 
