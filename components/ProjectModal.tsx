@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { X, ExternalLink, Github, Star, GitFork, Loader2 } from 'lucide-react';
+import { X, ExternalLink, Github, Loader2 } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
@@ -11,8 +11,7 @@ interface Project {
   github: string;
   repoOwner?: string;
   repoName?: string;
-  stars: number;
-  forks: number;
+  liveUrl?: string;
   imageUrl: string;
 }
 
@@ -95,10 +94,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onC
                 </span>
               ))}
             </div>
-            <div className="flex items-center gap-6 text-slate-400 text-sm font-mono">
-              <span className="flex items-center gap-1.5"><Star size={16} className="text-yellow-500" /> {project.stars}</span>
-              <span className="flex items-center gap-1.5"><GitFork size={16} className="text-blue-500" /> {project.forks}</span>
-            </div>
           </div>
         </div>
 
@@ -123,14 +118,16 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onC
                 >
                   <Github size={14} /> Repository
                 </a>
-                <a 
-                  href={project.github} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-cyan-600 hover:bg-cyan-500 rounded-xl text-xs font-bold text-white shadow-lg shadow-cyan-500/20 transition-all"
-                >
-                  Live Demo <ExternalLink size={14} />
-                </a>
+                {project.liveUrl && (
+                  <a 
+                    href={project.liveUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 bg-cyan-600 hover:bg-cyan-500 rounded-xl text-xs font-bold text-white shadow-lg shadow-cyan-500/20 transition-all"
+                  >
+                    Live Demo <ExternalLink size={14} />
+                  </a>
+                )}
               </div>
             </div>
 

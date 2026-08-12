@@ -1,18 +1,16 @@
 import React from 'react';
-import { ExternalLink, Star, GitFork, ArrowRight } from 'lucide-react';
+import { ExternalLink, ArrowRight } from 'lucide-react';
 
 interface RepoProps {
   name: string;
   description: string;
-  stars: number;
-  forks: number;
   tech: string;
   url: string;
   imageUrl?: string;
   onClick?: () => void;
 }
 
-export const GithubRepoCard: React.FC<RepoProps> = ({ name, description, stars, forks, tech, url, imageUrl, onClick }) => {
+export const GithubRepoCard: React.FC<RepoProps> = ({ name, description, tech, url, imageUrl, onClick }) => {
   return (
     <div 
       className="group relative h-full cursor-pointer"
@@ -71,16 +69,6 @@ export const GithubRepoCard: React.FC<RepoProps> = ({ name, description, stars, 
               <div className="flex items-center gap-1.5 text-cyan-400 text-xs font-bold group-hover:translate-x-1 transition-transform">
                 Details <ArrowRight size={14} />
               </div>
-            </div>
-
-            {/* Stats Bar */}
-            <div className="flex items-center gap-4 text-[var(--text-secondary)] text-xs font-mono pt-4 border-t border-white/5">
-              <span className="flex items-center gap-1">
-                <Star size={14} className="text-yellow-500/70" /> {stars}
-              </span>
-              <span className="flex items-center gap-1">
-                <GitFork size={14} className="text-blue-500/70" /> {forks}
-              </span>
             </div>
           </div>
         </div>

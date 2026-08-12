@@ -12,8 +12,7 @@ interface Project {
   github: string;
   repoOwner?: string;
   repoName?: string;
-  stars: number;
-  forks: number;
+  liveUrl?: string;
   imageUrl: string;
 }
 
@@ -46,8 +45,6 @@ export const Projects: React.FC = () => {
             key={idx}
             name={project.title}
             description={project.description}
-            stars={project.stars}
-            forks={project.forks}
             tech={project.primaryTech}
             url={project.github}
             imageUrl={project.imageUrl}

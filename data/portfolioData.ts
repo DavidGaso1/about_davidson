@@ -65,88 +65,96 @@ export const experiences = [
 
 export const projects = [
   {
+    title: "AI-News-Update",
+    description: "Fully automated daily AI news digest — cron-fetched from RSS, cross-day dedup, email delivery, live dashboard on Vercel. Built with Python, feedparser, GitHub Actions and a CI-tested pipeline.",
+    tech: ["Python", "GitHub Actions", "RSS", "SMTP", "Vercel"],
+    primaryTech: "Python / Automation",
+    github: "https://github.com/DavidGaso1/AI-News-Update",
+    repoOwner: "DavidGaso1",
+    repoName: "AI-News-Update",
+    liveUrl: "https://ainl.vercel.app",
+    imageUrl: "/projects/job_agent_mock_ui.png"
+  },
+  {
+    title: "HealthRAG",
+    description: "Nigeria-first synthetic-only health triage prototype — source-grounded RAG with safety guardrails, full documentation, architecture diagrams and CI.",
+    tech: ["Python", "RAG", "LangChain", "ChromaDB", "Gemini"],
+    primaryTech: "Python / RAG",
+    github: "https://github.com/DavidGaso1/HealthRAG",
+    repoOwner: "DavidGaso1",
+    repoName: "HealthRAG",
+    imageUrl: "/projects/vizo_rag_mock_ui.png"
+  },
+  {
+    title: "VIZO-RAG System",
+    description: "Enterprise-grade Retrieval-Augmented Generation system for ViZO Technologies — vector embeddings, semantic document search and grounded answers.",
+    tech: ["Python", "LangChain", "ChromaDB", "HF Embeddings"],
+    primaryTech: "Python / AI",
+    github: "https://github.com/DavidGaso1/VIZO-RAG",
+    repoOwner: "DavidGaso1",
+    repoName: "VIZO-RAG",
+    imageUrl: "/projects/vizo_rag_mock_ui.png"
+  },
+  {
+    title: "financial-statement-pipeline",
+    description: "Extraction pipeline for scanned Nigerian financial statements — OCR, structured output, validation and exporters with full test coverage.",
+    tech: ["Python", "OCR", "Pydantic", "pytest", "CI"],
+    primaryTech: "Python / Data",
+    github: "https://github.com/DavidGaso1/financial-statement-pipeline",
+    repoOwner: "DavidGaso1",
+    repoName: "financial-statement-pipeline",
+    imageUrl: "/projects/portfolio_mock_ui.png"
+  },
+  {
     title: "Job-Agent",
-    description: "An advanced AI-powered job application assistant that automates searches, tailors resumes, and assists in the application process.",
+    description: "AI-powered job application assistant that automates searches, tailors resumes and assists in the application process.",
     tech: ["Python", "Playwright", "Qwen 0.5B", "FastAPI"],
     primaryTech: "Python / AI",
     github: "https://github.com/DavidGaso1/Job-Agent",
     repoOwner: "DavidGaso1",
     repoName: "Job-Agent",
-    stars: 45,
-    forks: 12,
     imageUrl: "/projects/job_agent_mock_ui.png"
   },
   {
-    title: "AI Portfolio",
-    description: "The very portfolio you are viewing! A modern, interactive showcase built with React, Vite, and integrated with Ndu, a local AI assistant running Qwen 0.5B via WebLLM.",
-    tech: ["React", "TypeScript", "WebLLM", "Qwen 0.5B", "WebGPU"],
-    primaryTech: "WebLLM / React",
-    github: "https://github.com/DavidGaso1/davidson-s-ai-portfolio",
+    title: "R-Medy",
+    description: "Natural health solutions web app — modern React/Next.js frontend with AI-powered lead capture and secure webhook integrations.",
+    tech: ["Next.js", "TypeScript", "Tailwind", "AI"],
+    primaryTech: "Full-Stack / AI",
+    github: "https://github.com/DavidGaso1/R-Medy",
     repoOwner: "DavidGaso1",
-    repoName: "davidson-s-ai-portfolio",
-    stars: 28,
-    forks: 5,
+    repoName: "R-Medy",
     imageUrl: "/projects/portfolio_mock_ui.png"
   },
   {
-    title: "VIZO-RAG System",
-    description: "Enterprise-grade Retrieval-Augmented Generation system for ViZO Technologies, featuring vector embeddings and semantic document search.",
-    tech: ["Python", "LangChain", "OpenAI", "Supabase"],
-    primaryTech: "Python / AI",
-    github: "https://github.com/DavidGaso1/VIZO-RAG",
-    repoOwner: "DavidGaso1",
-    repoName: "VIZO-RAG",
-    stars: 124,
-    forks: 35,
-    imageUrl: "/projects/vizo_rag_mock_ui.png"
-  },
-  {
     title: "N8n Automation Hub",
-    description: "A comprehensive collection of AI-driven automation workflows designed for academic research, task management, and API integrations.",
-    tech: ["n8n", "JSON", "Automation", "Workflows"],
+    description: "A collection of AI-driven n8n automation workflows — academic research, task management and API integrations with Gemini and Telegram.",
+    tech: ["n8n", "JSON", "Gemini", "Automation"],
     primaryTech: "n8n Workflows",
     github: "https://github.com/DavidGaso1/N8n-Automation",
     repoOwner: "DavidGaso1",
     repoName: "N8n-Automation",
-    stars: 89,
-    forks: 12,
-    imageUrl: "/projects/n8n_workflow_mock_ui.png"
+    imageUrl: "/projects/bolt_diy_mock_ui.png"
   },
   {
-    title: "AI Assignment Gen",
-    description: "Intelligent tool that generates structured academic assignments with proper citations and professional formatting using Qwen 0.5B.",
-    tech: ["Qwen 0.5B", "HTML/CSS", "JavaScript"],
-    primaryTech: "GenAI",
-    github: "https://github.com/DavidGaso1/AI-Assignment-Gen",
+    title: "AI Portfolio",
+    description: "The very portfolio you are viewing — a modern, interactive React/TypeScript showcase with WebGL shaders and a local AI assistant.",
+    tech: ["React", "TypeScript", "WebGL", "Vite"],
+    primaryTech: "React / TS",
+    github: "https://github.com/DavidGaso1/davidson-s-ai-portfolio",
     repoOwner: "DavidGaso1",
-    repoName: "AI-Assignment-Gen",
-    stars: 256,
-    forks: 42,
-    imageUrl: "/projects/ai_assignment_gen_mock_ui.png"
+    repoName: "davidson-s-ai-portfolio",
+    liveUrl: "https://david.dgi.qzz.io",
+    imageUrl: "/projects/portfolio_mock_ui.png"
   },
   {
-    title: "Data-DGI Analysis",
-    description: "Jupyter Notebook based data analysis project focused on large-scale insights and visualization for DGI Integrated Services.",
-    tech: ["Python", "Jupyter", "Pandas", "Matplotlib"],
+    title: "data-analysis-projects",
+    description: "Python, SQL and Jupyter notebook data analysis portfolio — cleaning, EDA and visualization with documented notebooks.",
+    tech: ["Python", "Jupyter", "Pandas", "SQL"],
     primaryTech: "Data Analysis",
-    github: "https://github.com/DavidGaso1/-Data-DGI",
+    github: "https://github.com/DavidGaso1/data-analysis-projects",
     repoOwner: "DavidGaso1",
-    repoName: "-Data-DGI",
-    stars: 52,
-    forks: 7,
-    imageUrl: "/projects/data_dgi_mock_ui.png"
-  },
-  {
-    title: "SQL Data Cleaning",
-    description: "Detailed step-by-step SQL scripts and processes for cleaning and preprocessing complex datasets for analysis and visualization.",
-    tech: ["MySQL", "SQL", "Data Cleansing"],
-    primaryTech: "Data Engineering",
-    github: "https://github.com/DavidGaso1/Data-Cleaning-WIth-Mysql",
-    repoOwner: "DavidGaso1",
-    repoName: "Data-Cleaning-WIth-Mysql",
-    stars: 67,
-    forks: 8,
-    imageUrl: "/projects/mysql_data_cleaning_mock_ui.png"
+    repoName: "data-analysis-projects",
+    imageUrl: "/projects/job_agent_mock_ui.png"
   }
 ];
 
