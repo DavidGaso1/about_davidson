@@ -128,7 +128,6 @@ export const PROJECTS = [
       "Full audit trail via Excel backup before validation"
     ],
     category: "Automation",
-    featured: true,
     github: null,
     image: "/projects/bolt_diy_mock_ui.png",
     status: "ready",
@@ -148,7 +147,6 @@ export const PROJECTS = [
       "Real-time personnel scheduling and alert management"
     ],
     category: "Automation",
-    featured: true,
     github: null,
     image: null,
     status: "ready",
@@ -168,7 +166,6 @@ export const PROJECTS = [
       "Reduced incident detection from manual review to near real-time"
     ],
     category: "Infrastructure",
-    featured: true,
     github: null,
     image: null,
     status: "ready",
@@ -188,7 +185,6 @@ export const PROJECTS = [
       "Offline test suite: 20 tests, no API key required"
     ],
     category: "AI System",
-    featured: false,
     github: "https://github.com/DavidGaso1/VIZO-RAG",
     image: "/projects/vizo_rag_mock_ui.png",
     status: "ready"
@@ -206,7 +202,6 @@ export const PROJECTS = [
       "Optimized for AI startup job applications"
     ],
     category: "Web Development",
-    featured: false,
     github: "https://github.com/DavidGaso1/about_davidson",
     liveUrl: "https://david.dgi.qzz.io",
     image: "/projects/portfolio_mock_ui.png",
@@ -227,7 +222,6 @@ export const PROJECTS = [
       "Manual-review safety gate: dry runs never submit and prepared forms remain READY_TO_SUBMIT"
     ],
     category: "AI System",
-    featured: false,
     github: "https://github.com/DavidGaso1/Job-Agent",
     image: "/projects/job_agent_mock_ui.png",
     status: "showcase-ready"
@@ -246,7 +240,6 @@ export const PROJECTS = [
       "Secure handling of sensitive and test data"
     ],
     category: "Data Engineering",
-    featured: false,
     github: "https://github.com/DavidGaso1/Health-Care-Repo",
     image: null,
     status: "ready"
@@ -265,7 +258,6 @@ export const PROJECTS = [
       "Real-time learning from user interactions"
     ],
     category: "AI System",
-    featured: false,
     github: "https://github.com/DavidGaso1/restaurant-recommendation-system",
     image: null,
     status: "ready"
@@ -284,7 +276,6 @@ export const PROJECTS = [
       "Offline release gate: 55 tests + 16 synthetic evaluation cases, no API key required"
     ],
     category: "AI System",
-    featured: false,
     github: "https://github.com/DavidGaso1/HealthRAG",
     image: null,
     status: "ready"
@@ -303,7 +294,6 @@ export const PROJECTS = [
       "CI-tested: dedup, archive merge, and retention logic all covered"
     ],
     category: "Automation",
-    featured: false,
     github: "https://github.com/DavidGaso1/AI-News-Update",
     liveUrl: "https://ainl.vercel.app",
     image: null,
@@ -324,7 +314,6 @@ export const PROJECTS = [
       "GitHub Actions CI on every push"
     ],
     category: "Data Engineering",
-    featured: false,
     github: "https://github.com/DavidGaso1/financial-statement-pipeline",
     image: null,
     status: "showcase-ready"
@@ -343,7 +332,6 @@ export const PROJECTS = [
       "Full documentation and security review included"
     ],
     category: "Web Development",
-    featured: false,
     github: "https://github.com/DavidGaso1/R-Medy",
     liveUrl: "https://rmedy.qzz.io",
     image: null,
@@ -363,13 +351,15 @@ export const PROJECTS = [
       "Evidence-based content with proper references"
     ],
     category: "AI System",
-    featured: false,
     github: "https://github.com/DavidGaso1/N8n-Automation",
     image: null,
     status: "ready",
     metrics: ["Zero manual formatting", "Citations auto-included"]
   }
 ];
+
+// One source of truth for the portfolio's recruiter-facing featured-project order.
+export const FEATURED_PROJECT_IDS = [6, 4, 9];
 
 export const CERTIFICATIONS = [
   {

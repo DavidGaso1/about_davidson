@@ -71,14 +71,14 @@ Built cloud infrastructure and automation workflows supporting enterprise data o
 
 | Project | Description | Status |
 |---|---|---|
-| [AI-News-Update](https://github.com/DavidGaso1/AI-News-Update) · [Live](https://ainl.vercel.app) | Fully automated daily AI news digest — cron-fetched with cross-day dedup, emailed to subscribers, deployed to Vercel. CI-tested pipeline. | Showcase Ready |
-| [HealthRAG](https://github.com/DavidGaso1/HealthRAG) | Nigeria-first, synthetic-only health triage prototype — rule-first emergency detection, retrieval-grounded answers, fail-closed privacy boundary. | Ready |
-| [VIZO-RAG System](https://github.com/DavidGaso1/VIZO-RAG) | Enterprise RAG assistant — ChromaDB vector search, Hugging Face embeddings, Gemini-backed grounded answers. | Ready |
-| [financial-statement-pipeline](https://github.com/DavidGaso1/financial-statement-pipeline) | OCR + extraction pipeline for scanned Nigerian financial statements — validation, confidence scoring, exporters, full test suite. | Showcase Ready |
 | [Job-Agent](https://github.com/DavidGaso1/Job-Agent) | Production-hardened AI job-application agent — FastAPI, LangGraph, OAuth-secured Chrome extension, 111 backend tests. | Showcase Ready |
-| [R-Medy](https://github.com/DavidGaso1/R-Medy) | Natural health solutions web app — Next.js, AI-powered lead capture, secure webhooks. | Ready |
+| [VIZO-RAG System](https://github.com/DavidGaso1/VIZO-RAG) | Enterprise RAG assistant — ChromaDB vector search, Hugging Face embeddings, Gemini-backed grounded answers. | Ready |
+| [HealthRAG](https://github.com/DavidGaso1/HealthRAG) | Nigeria-first, synthetic-only health triage prototype — rule-first emergency detection, retrieval-grounded answers, fail-closed privacy boundary. | Ready |
+| [financial-statement-pipeline](https://github.com/DavidGaso1/financial-statement-pipeline) | OCR + extraction pipeline for scanned Nigerian financial statements — validation, confidence scoring, exporters, full test suite. | Showcase Ready |
+| [R-Medy](https://github.com/DavidGaso1/R-Medy) · [Live](https://rmedy.qzz.io) | Natural health solutions web app — Next.js, AI-powered lead capture, secure webhooks. | Ready |
 | [N8n-Automation](https://github.com/DavidGaso1/N8n-Automation) | Collection of AI automation workflows with Gemini and Telegram. | Ready |
 | [data-analysis-projects](https://github.com/DavidGaso1/data-analysis-projects) | Python, SQL and Jupyter data analysis portfolio. | Ready |
+| [AI-News-Update](https://github.com/DavidGaso1/AI-News-Update) · [Live](https://ainl.vercel.app) | Fully automated daily AI news digest — cron-fetched with cross-day dedup, emailed to subscribers, deployed to Vercel. CI-tested pipeline. | Showcase Ready |
 
 ---
 
@@ -124,6 +124,7 @@ This repository hosts the portfolio website itself — a modern, interactive sho
 
 - **Development:** `npm install` → `npm run dev`
 - **Build:** `npm run build` (outputs to `dist/`)
+- **Resume generation:** `python3 -m venv .resume-venv && .resume-venv/bin/pip install -r scripts/requirements.txt && .resume-venv/bin/python scripts/generate_resume.py` (requires the system `fonts-dejavu-core` package; writes the linked PDF to `public/`)
 - **Deployment:** GitHub Pages with custom domain `david.dgi.qzz.io` via CNAME in `public/`
 
 ---

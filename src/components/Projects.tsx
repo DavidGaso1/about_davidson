@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { PROJECTS } from '../data/portfolioData';
+import { FEATURED_PROJECT_IDS, PROJECTS } from '../data/portfolioData';
 import { ExternalLink, Github, X, ChevronRight, Sparkles, BarChart3 } from 'lucide-react';
 
 function StatusBadge({ status }: { status: string }) {
@@ -91,8 +91,15 @@ export function Projects() {
     return () => observer.disconnect();
   }, []);
 
-  const featured = PROJECTS.filter((p) => p.featured);
-  const others = PROJECTS.filter((p) => !p.featured && p.status !== 'under-work');
+  // Lead with the projects most relevant to AI Engineer / RAG roles.
+  // Keep the automated news digest at the end of the supporting-project list.
+  const featured = FEATURED_PROJECT_IDS
+    .map((id) => PROJECTS.find((project) => project.id === id))
+    .filter((project): project is (typeof PROJECTS)[number] => Boolean(project));
+  const featuredIdSet = new Set(featured.map((project) => project.id));
+  const others = PROJECTS
+    .filter((p) => !featuredIdSet.has(p.id) && p.status !== 'under-work')
+    .sort((a, b) => (a.id === 10 ? 1 : b.id === 10 ? -1 : a.id - b.id));
   const inProgress = PROJECTS.filter((p) => p.status === 'under-work');
 
   return (
