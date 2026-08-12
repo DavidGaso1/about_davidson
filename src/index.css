@@ -97,6 +97,66 @@
   display: none;
 }
 
+.hero-tech-grid {
+  background-image: linear-gradient(rgba(148, 163, 184, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.055) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: linear-gradient(to bottom, transparent, black 15%, black 82%, transparent);
+  animation: grid-drift 22s linear infinite;
+}
+
+.hero-flow-line {
+  stroke-dasharray: 5 18;
+  stroke-dashoffset: 0;
+  animation: flow-drift 16s linear infinite;
+}
+
+.hero-flow-line-delay {
+  animation-delay: -7s;
+}
+
+.hero-node-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: node-pulse 2.8s ease-in-out infinite;
+}
+
+.hero-node-delay {
+  animation-delay: -1.4s;
+}
+
+@keyframes grid-drift {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 52px 52px, 52px 52px; }
+}
+
+@keyframes flow-drift {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -92; }
+}
+
+@keyframes node-pulse {
+  0%, 100% { opacity: 0.35; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero-tech-grid,
+  .hero-flow-line,
+  .hero-node-pulse {
+    animation: none;
+  }
+}
+
 .hover-roll {
   font-family: 'JetBrains Mono', monospace;
   text-transform: uppercase;

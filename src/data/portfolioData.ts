@@ -76,7 +76,7 @@ export const TECH_STACK = [
       { name: "Next.js", signal: "Production web delivery", detail: "Shipping responsive client-facing experiences with typed components, Tailwind styling, and deployment documentation.", usedIn: ["R-Medy"] },
       { name: "Tailwind CSS", signal: "Design system", detail: "Creating consistent responsive layouts, visual hierarchy, hover states, and polished dark interfaces quickly.", usedIn: ["This portfolio", "R-Medy"] },
       { name: "Playwright", signal: "Browser automation", detail: "Preparing browser workflows with explicit safety gates and human review before any consequential submission.", usedIn: ["AI Job Application Agent"] },
-      { name: "WebGL", signal: "Visual storytelling", detail: "Using shader-driven backgrounds and motion to make a technical portfolio feel like an engineered product.", usedIn: ["This portfolio"] },
+      { name: "SVG / CSS motion", signal: "Visual storytelling", detail: "Using responsive SVG paths, animated data-flow lines, and CSS grid motion to make a technical portfolio feel like an engineered product.", usedIn: ["This portfolio"] },
     ],
   },
   {
@@ -264,11 +264,11 @@ export const PROJECTS = [
   {
     id: 5,
     title: "AI Portfolio",
-    description: "This portfolio \u2014 a modern, interactive showcase built with React, Vite, and TypeScript featuring WebGL shader backgrounds and 3D elements.",
-    longDescription: "A modern, high-performance portfolio website featuring a custom WebGL matrix-rain shader background, 3D kinetic text helix, scroll-reveal animations, and terminal-style typing effects. Built to demonstrate front-end craftsmanship alongside AI engineering expertise.",
-    tech: ["React", "TypeScript", "Vite", "WebGL", "Tailwind CSS"],
+    description: "This portfolio \u2014 a modern, interactive showcase built with React, Vite, and TypeScript featuring an animated systems-grid hero and an interactive technology constellation.",
+    longDescription: "A modern, high-performance portfolio website featuring an animated systems-grid hero, connected technology constellation, scroll-reveal animations, and terminal-style interaction. Built to demonstrate front-end craftsmanship alongside AI engineering expertise.",
+    tech: ["React", "TypeScript", "Vite", "SVG", "Tailwind CSS"],
     highlights: [
-      "Custom WebGL matrix-rain shader background",
+      "Animated systems-grid hero with data-flow visuals",
       "Scroll-reveal animations throughout",
       "Terminal-style hacker text effects",
       "Optimized for AI startup job applications"

@@ -1,3 +1,4 @@
+// Legacy visual retained for optional experiments; the production hero uses TechGridBackground.
 import { useEffect, useRef } from 'react';
 
 function createShader(gl: WebGLRenderingContext, type: number, source: string): WebGLShader | null {
