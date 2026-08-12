@@ -81,17 +81,17 @@ export const EXPERIENCES = [
   },
   {
     id: 2,
-    role: "Data Protection Officer & AI Data Governance Specialist",
+    role: "AI Engineer",
     company: "ViZO Technology Limited",
     period: "April 2024 \u2013 Present",
     location: "Hybrid, Abuja",
     type: "Current",
-    description: "Lead data protection strategy while architecting AI-powered knowledge management systems and operational automation workflows.",
+    description: "Building production AI systems — including a RAG pipeline for semantic search across organizational knowledge — and automation workflows that run core operations.",
     achievements: [
       "Architected a production RAG system integrating vector embeddings for semantic search across organizational knowledge bases",
-      "Evaluated and implemented AI tools and automation workflows across operational functions, delivering adoption and ROI recommendations to leadership",
-      "Designed and documented repeatable data governance and AI workflows aligned with NDPR, GDPR, and ISO 27001 standards",
-      "Trained cross-functional teams on responsible AI tool use and prompt engineering practices"
+      "Designed and implemented AI automation workflows across operational functions, delivering adoption and ROI recommendations to leadership",
+      "Integrated retrieval-augmented generation patterns with Supabase-backed storage and n8n orchestration for repeatable AI pipelines",
+      "Documented data governance and AI workflows aligned with NDPR, GDPR, and ISO 27001 standards, and trained teams on responsible AI use"
     ],
     tech: ["Python", "LangChain", "Supabase", "n8n", "RAG"]
   },

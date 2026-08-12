@@ -42,15 +42,15 @@ Sole technical owner delivering production automation systems for three independ
 
 **Tech:** n8n · Python · Supabase · AWS · Claude Code
 
-### 2. Data Protection Officer & AI Data Governance Specialist — ViZO Technology Limited
+### 2. AI Engineer — ViZO Technology Limited
 *April 2024 – Present · Hybrid, Abuja · Current*
 
-Lead data protection strategy while architecting AI-powered knowledge management systems and operational automation workflows.
+Building production AI systems — including a RAG pipeline for semantic search across organizational knowledge — and automation workflows that run core operations.
 
 - Architected a production RAG system integrating vector embeddings for semantic search across organizational knowledge bases
-- Evaluated and implemented AI tools and automation workflows across operational functions, delivering adoption and ROI recommendations to leadership
-- Designed and documented repeatable data governance and AI workflows aligned with NDPR, GDPR, and ISO 27001 standards
-- Trained cross-functional teams on responsible AI tool use and prompt engineering practices
+- Designed and implemented AI automation workflows across operational functions, delivering adoption and ROI recommendations to leadership
+- Integrated retrieval-augmented generation patterns with Supabase-backed storage and n8n orchestration for repeatable AI pipelines
+- Documented data governance and AI workflows aligned with NDPR, GDPR, and ISO 27001 standards, and trained teams on responsible AI use
 
 **Tech:** Python · LangChain · Supabase · n8n · RAG
 
