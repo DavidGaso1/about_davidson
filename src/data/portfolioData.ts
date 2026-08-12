@@ -18,8 +18,80 @@ export const PERSONAL_INFO = {
 
 export const NAV_LINKS = [
   { label: "Work", href: "#projects" },
+  { label: "Tech Stack", href: "#tech-stack" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
+];
+
+export const TECH_STACK = [
+  {
+    id: "ai-agents",
+    label: "AI & Agents",
+    eyebrow: "Reasoning layer",
+    description: "The model, retrieval, and orchestration technologies behind my agentic systems.",
+    technologies: [
+      { name: "Claude Code", signal: "Development copilot", detail: "Used to coordinate multi-agent development workflows, shared configuration, and production delivery practices.", usedIn: ["Freelance AI Automation", "AI Portfolio"] },
+      { name: "RAG systems", signal: "Grounded answers", detail: "Designing retrieval pipelines that search organizational knowledge and refuse to guess when supporting evidence is missing.", usedIn: ["VIZO-RAG System", "HealthRAG", "ViZO AI Engineer role"] },
+      { name: "LangChain / LangGraph", signal: "Agent orchestration", detail: "Connecting model calls, retrieval, tools, state, and safe workflow transitions into repeatable systems.", usedIn: ["AI Job Application Agent", "VIZO-RAG System"] },
+      { name: "Gemini", signal: "Model layer", detail: "Applied to personalization, grounded generation, classification, and academic content workflows with explicit validation boundaries.", usedIn: ["Zenko lead pipeline", "VIZO-RAG System", "N8n Automation"] },
+      { name: "MCP concepts", signal: "Tool connectivity concepts", detail: "A working knowledge area for connecting AI agents to tools and structured context without implying that a specific external MCP server is installed here.", usedIn: ["Agent development environment", "AI engineering workflow"] },
+      { name: "Multi-agent orchestration", signal: "System design", detail: "Coordinating specialized agents with shared instructions, handoffs, review loops, and human approval gates.", usedIn: ["Freelance AI Automation", "AI Job Application Agent"] },
+    ],
+  },
+  {
+    id: "data-retrieval",
+    label: "Data & Retrieval",
+    eyebrow: "Knowledge layer",
+    description: "The storage, embedding, validation, and document-processing tools that make AI outputs useful and traceable.",
+    technologies: [
+      { name: "Python", signal: "Primary engineering language", detail: "Used for orchestration, validation, data processing, API services, evaluation suites, and automation workers.", usedIn: ["All production automation", "HealthRAG", "Financial pipeline"] },
+      { name: "ChromaDB", signal: "Vector persistence", detail: "Persisting embeddings and retrieving semantically relevant evidence for source-grounded assistants.", usedIn: ["VIZO-RAG System", "NutriDine"] },
+      { name: "Hugging Face embeddings", signal: "Semantic indexing", detail: "Creating local embeddings for offline-friendly retrieval experiments and repeatable evaluation.", usedIn: ["VIZO-RAG System"] },
+      { name: "Supabase", signal: "Operational data", detail: "Providing durable storage, workflow state, and integration points for production automation systems.", usedIn: ["Zenko", "Theldoforce", "DGI monitoring", "ViZO RAG"] },
+      { name: "SQL / PostgreSQL", signal: "Structured persistence", detail: "Modeling user-scoped records, operational data, and validated datasets with a focus on clear ownership boundaries.", usedIn: ["AI Job Application Agent", "NutriDine", "Healthcare data project"] },
+      { name: "OCR & validation", signal: "Document intelligence", detail: "Turning scanned financial statements into structured outputs with parsing, confidence scoring, and export checks.", usedIn: ["Financial statement pipeline"] },
+    ],
+  },
+  {
+    id: "automation-cloud",
+    label: "Automation & Cloud",
+    eyebrow: "Execution layer",
+    description: "The infrastructure and workflow tools that move systems from a model response to a dependable operation.",
+    technologies: [
+      { name: "n8n", signal: "Workflow orchestration", detail: "Connecting webhooks, APIs, model calls, databases, notifications, and human handoffs into observable workflows.", usedIn: ["Zenko", "Theldoforce", "DGI monitoring", "N8n Automation"] },
+      { name: "AWS", signal: "Cloud operations", detail: "Building storage, monitoring, and infrastructure automation with AWS S3, CLI, and CloudWatch patterns.", usedIn: ["DGI infrastructure monitoring", "AWS internship"] },
+      { name: "GitHub Actions", signal: "Scheduled CI/CD", detail: "Running tests, scheduled jobs, retention logic, and deployment workflows without manual intervention.", usedIn: ["AI-News-Update", "Financial statement pipeline", "HealthRAG"] },
+      { name: "Webhooks", signal: "Event-driven systems", detail: "Receiving secured events and routing them through validation, enrichment, persistence, and alerting steps.", usedIn: ["Zenko", "DGI monitoring", "R-Medy"] },
+      { name: "Telegram / Gmail / WhatsApp", signal: "Operational delivery", detail: "Delivering role-aware notifications and failure alerts through the channels teams already use.", usedIn: ["Theldoforce", "Zenko", "DGI monitoring"] },
+    ],
+  },
+  {
+    id: "product-engineering",
+    label: "Product Engineering",
+    eyebrow: "Experience layer",
+    description: "The frontend, API, browser, and design technologies used to turn systems into clear, usable products.",
+    technologies: [
+      { name: "React / TypeScript", signal: "Interactive interfaces", detail: "Building maintainable interfaces with typed data, responsive components, stateful interactions, and accessible controls.", usedIn: ["This portfolio", "NutriDine"] },
+      { name: "FastAPI", signal: "Typed API services", detail: "Providing structured backend APIs, health checks, authentication boundaries, and machine-readable errors.", usedIn: ["AI Job Application Agent", "NutriDine"] },
+      { name: "Next.js", signal: "Production web delivery", detail: "Shipping responsive client-facing experiences with typed components, Tailwind styling, and deployment documentation.", usedIn: ["R-Medy"] },
+      { name: "Tailwind CSS", signal: "Design system", detail: "Creating consistent responsive layouts, visual hierarchy, hover states, and polished dark interfaces quickly.", usedIn: ["This portfolio", "R-Medy"] },
+      { name: "Playwright", signal: "Browser automation", detail: "Preparing browser workflows with explicit safety gates and human review before any consequential submission.", usedIn: ["AI Job Application Agent"] },
+      { name: "WebGL", signal: "Visual storytelling", detail: "Using shader-driven backgrounds and motion to make a technical portfolio feel like an engineered product.", usedIn: ["This portfolio"] },
+    ],
+  },
+  {
+    id: "reliability-quality",
+    label: "Reliability & Quality",
+    eyebrow: "Trust layer",
+    description: "The controls that keep AI and automation systems observable, testable, fail-safe, and ready for human review.",
+    technologies: [
+      { name: "Retry + circuit breakers", signal: "Failure recovery", detail: "Recovering from transient failures while pausing ingestion when repeated failures indicate a deeper problem.", usedIn: ["Zenko", "Theldoforce", "DGI monitoring"] },
+      { name: "pytest / offline suites", signal: "Repeatable evaluation", detail: "Testing safety rules, retrieval behavior, parsing, deduplication, and exporters without depending on live credentials.", usedIn: ["HealthRAG", "VIZO-RAG", "Financial pipeline", "AI-News-Update"] },
+      { name: "OAuth + JWT", signal: "Identity boundaries", detail: "Validating identity claims and scoping persistent records before an application token is issued.", usedIn: ["AI Job Application Agent"] },
+      { name: "CI/CD", signal: "Release confidence", detail: "Combining automated checks, build validation, and deployment workflows so changes are visible before release.", usedIn: ["AI-News-Update", "HealthRAG", "Financial pipeline"] },
+      { name: "Human-in-the-loop", signal: "Safe autonomy", detail: "Keeping high-impact actions in a reviewable state instead of allowing an agent to cross a consequential boundary silently.", usedIn: ["AI Job Application Agent", "AI workflow design"] },
+    ],
+  },
 ];
 
 export const SKILLS = {

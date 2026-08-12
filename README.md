@@ -122,6 +122,8 @@ Systems theory, organizational behavior, and qualitative research — applied to
 
 This repository hosts the portfolio website itself — a modern, interactive showcase built with **React 19, TypeScript, Vite, Tailwind CSS**, and a custom **WebGL matrix-rain shader**.
 
+The site includes an interactive **Tech Stack constellation** rather than a static skills list. Visitors can filter the stack by AI & Agents, Data & Retrieval, Automation & Cloud, Product Engineering, and Reliability & Quality, then select a technology to see the systems and projects where it is used. It is implemented with the existing React/Tailwind stack and does not require an external MCP or runtime service.
+
 - **Development:** `npm install` → `npm run dev`
 - **Build:** `npm run build` (outputs to `dist/`)
 - **Resume generation:** `python3 -m venv .resume-venv && .resume-venv/bin/pip install -r scripts/requirements.txt && .resume-venv/bin/python scripts/generate_resume.py` (requires the system `fonts-dejavu-core` package; writes the linked PDF to `public/`)
