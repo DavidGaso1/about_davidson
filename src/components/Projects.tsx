@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { PROJECTS } from '../data/portfolioData';
-import { ExternalLink, Github, X, ChevronRight, Sparkles } from 'lucide-react';
+import { ExternalLink, Github, X, ChevronRight, Sparkles, BarChart3 } from 'lucide-react';
 
 function StatusBadge({ status }: { status: string }) {
   const ready = status !== 'under-work';
@@ -242,6 +242,25 @@ export function Projects() {
             <p className="text-slate-300 leading-relaxed mb-6">
               {selectedProject.longDescription}
             </p>
+
+            {selectedProject.metrics && selectedProject.metrics.length > 0 && (
+              <div className="mb-6">
+                <h4 className="text-sm font-semibold text-slate-200 mb-3 flex items-center gap-2">
+                  <BarChart3 className="w-4 h-4 text-sky-400" />
+                  Impact
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {selectedProject.metrics.map((m, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1 text-xs font-mono bg-emerald-500/10 text-emerald-400 rounded border border-emerald-500/20"
+                    >
+                      {m}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <div className="mb-6">
               <h4 className="text-sm font-semibold text-slate-200 mb-3">Key Highlights</h4>

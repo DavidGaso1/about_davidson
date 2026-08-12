@@ -5,6 +5,7 @@ import { MatrixBackground } from './MatrixBackground';
 
 export function Hero() {
   const roles = [
+    'AI Engineer',
     'Agentic AI Developer',
     'Automation Specialist',
     'Multi-Agent Systems Engineer',
@@ -83,7 +84,7 @@ export function Hero() {
             onClick={() => {
               const link = document.createElement('a');
               link.href = PERSONAL_INFO.resumePdf;
-              link.download = 'Davidson_Chiemezuo_Resume.pdf';
+              link.download = PERSONAL_INFO.resumeFileName || 'Davidson_Chiemezuo_Resume.pdf';
               link.click();
             }}
             className="inline-flex items-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-sky-500/30 text-slate-200 font-semibold rounded-xl transition-all duration-300"

@@ -12,6 +12,7 @@ export const PERSONAL_INFO = {
   bioShort: "I bridge AI innovation with data-driven automation. With a foundation in Sociology & Anthropology, I bring a unique human-centric lens to building intelligent systems that actually work for people.",
   avatar: "/profile.jpg",
   resumePdf: "/Ahuruezenma_Davidson_Chiemezuo_Resume.pdf",
+  resumeFileName: "Davidson_Chiemezuo_Resume.pdf",
   openTo: ["Remote (Permanent)", "AI Startups", "US Hours Compatible"]
 };
 
@@ -130,7 +131,8 @@ export const PROJECTS = [
     featured: true,
     github: null,
     image: "/projects/bolt_diy_mock_ui.png",
-    status: "ready"
+    status: "ready",
+    metrics: ["24/7 automated", "3x retry + circuit breaker", "Full audit trail"]
   },
   {
     id: 2,
@@ -149,7 +151,8 @@ export const PROJECTS = [
     featured: true,
     github: null,
     image: null,
-    status: "ready"
+    status: "ready",
+    metrics: ["3 channels (Telegram/Gmail/WhatsApp)", "Role-based AI tiering", "Dual-channel failure alerts"]
   },
   {
     id: 3,
@@ -168,7 +171,8 @@ export const PROJECTS = [
     featured: true,
     github: null,
     image: null,
-    status: "ready"
+    status: "ready",
+    metrics: ["Near real-time alerts", "AI error classification", "Consecutive-failure circuit breaking"]
   },
   {
     id: 4,
@@ -204,6 +208,7 @@ export const PROJECTS = [
     category: "Web Development",
     featured: false,
     github: "https://github.com/DavidGaso1/about_davidson",
+    liveUrl: "https://david.dgi.qzz.io",
     image: "/projects/portfolio_mock_ui.png",
     status: "ready"
   },
@@ -302,7 +307,8 @@ export const PROJECTS = [
     github: "https://github.com/DavidGaso1/AI-News-Update",
     liveUrl: "https://ainl.vercel.app",
     image: null,
-    status: "showcase-ready"
+    status: "showcase-ready",
+    metrics: ["Daily 6 AM delivery", "0 duplicates cross-day", "CI-tested pipeline"]
   },
   {
     id: 11,
@@ -339,8 +345,29 @@ export const PROJECTS = [
     category: "Web Development",
     featured: false,
     github: "https://github.com/DavidGaso1/R-Medy",
+    liveUrl: "https://rmedy.qzz.io",
     image: null,
-    status: "ready"
+    status: "ready",
+    metrics: ["Live production site", "AI lead capture", "Webhook integration"]
+  },
+  {
+    id: 13,
+    title: "AI-Powered Academic Assignment Generator",
+    client: null,
+    description: "An AI essay generator using Google Gemini that creates structured academic assignments with headings, citations, and properly formatted paragraphs.",
+    longDescription: "Built a prompt-driven system that converts JSON data into production-ready, responsive HTML documents. Streamlined academic submissions by standardizing formatting and integrating evidence-based content with proper references.",
+    tech: ["Google Gemini", "n8n", "HTML/CSS", "JavaScript"],
+    highlights: [
+      "Automated creation of formatted academic content with headings and citations",
+      "Prompt-driven JSON-to-HTML conversion",
+      "Evidence-based content with proper references"
+    ],
+    category: "AI System",
+    featured: false,
+    github: "https://github.com/DavidGaso1/N8n-Automation",
+    image: null,
+    status: "ready",
+    metrics: ["Zero manual formatting", "Citations auto-included"]
   }
 ];
 
@@ -400,6 +427,33 @@ export const STATS = [
   { label: "Years Experience", value: "2+" },
   { label: "Certifications", value: "8+" },
   { label: "Clients Served", value: "3" }
+];
+
+export const TESTIMONIALS = [
+  {
+    id: 1,
+    quote: "Davidson built our entire lead generation pipeline end-to-end — from website capture to personalized email delivery. It runs 24/7 with zero manual steps, and the reliability layer means failures alert us before they ever reach a customer.",
+    author: "Founder",
+    company: "Zenko Limited (DTC health & wellness brand)",
+    project: "Lead Generation & Personalization Automation",
+    metric: "24/7 automated"
+  },
+  {
+    id: 2,
+    quote: "Shift schedules, security alerts, and task assignments now distribute themselves across Telegram, Gmail, and WhatsApp — tiered by role so each person gets exactly the detail they need. What used to be daily manual coordination is now fully automated.",
+    author: "Operations Lead",
+    company: "Theldoforce (Security Services)",
+    project: "Operations & Personnel Alert System",
+    metric: "3 channels"
+  },
+  {
+    id: 3,
+    quote: "AWS errors that once took manual log review to find now trigger instant, classified alerts. The circuit-breaker pattern means the system pauses itself during suspicious traffic instead of compounding alerts.",
+    author: "Engineering Team",
+    company: "DGI Integrated Services",
+    project: "AWS Infrastructure Error Monitoring",
+    metric: "Near real-time"
+  }
 ];
 
 export const EDUCATION = {
