@@ -1,5 +1,7 @@
 # Davidson Chiemezuo — AI Developer Portfolio
 
+[![CI](https://github.com/DavidGaso1/davidson-s-ai-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/DavidGaso1/davidson-s-ai-portfolio/actions/workflows/ci.yml)
+
 A premium, dark-themed personal portfolio designed for an Agentic AI Developer. Built with React 19, TypeScript, Vite, Tailwind CSS, and a custom WebGL matrix-rain shader.
 
 ## Features
