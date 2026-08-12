@@ -122,7 +122,17 @@ Systems theory, organizational behavior, and qualitative research — applied to
 
 This repository hosts the portfolio website itself — a modern, interactive showcase built with **React 19, TypeScript, Vite, Tailwind CSS**, and a custom **WebGL matrix-rain shader**.
 
-The site includes an interactive **Tech Stack constellation** rather than a static skills list. Visitors can filter the stack by AI & Agents, Data & Retrieval, Automation & Cloud, Product Engineering, and Reliability & Quality, then select a technology to see the systems and projects where it is used. It is implemented with the existing React/Tailwind stack and does not require an external MCP or runtime service.
+The site includes an interactive **Tech Stack constellation** rather than a static skills list. Visitors can filter the stack by AI & Agents, Data & Retrieval, Automation & Cloud, Product Engineering, and Reliability & Quality, then select a technology to see the systems and projects where it is used. The visual experience is implemented with the existing React/Tailwind stack; the optional 21st.dev MCP is development-only and is not required at runtime.
+
+### 21st.dev MCP (development-only)
+
+This repository includes a safe project-level `.mcp.json` for the remote [21st.dev MCP](https://21st.dev/mcp). The API key is deliberately not stored in the repository. Set it in the shell used to launch your MCP client, then restart that client:
+
+```bash
+export TWENTY_FIRST_API_KEY="your-rotated-21st-key"
+```
+
+Claude Code and compatible clients can then load `https://21st.dev/api/mcp` through the project configuration. Use it to search or refine React/Tailwind component ideas; review generated code before applying it to the portfolio. **Never commit the key or place it in frontend code.**
 
 - **Development:** `npm install` → `npm run dev`
 - **Build:** `npm run build` (outputs to `dist/`)

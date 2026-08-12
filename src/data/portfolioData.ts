@@ -34,7 +34,7 @@ export const TECH_STACK = [
       { name: "RAG systems", signal: "Grounded answers", detail: "Designing retrieval pipelines that search organizational knowledge and refuse to guess when supporting evidence is missing.", usedIn: ["VIZO-RAG System", "HealthRAG", "ViZO AI Engineer role"] },
       { name: "LangChain / LangGraph", signal: "Agent orchestration", detail: "Connecting model calls, retrieval, tools, state, and safe workflow transitions into repeatable systems.", usedIn: ["AI Job Application Agent", "VIZO-RAG System"] },
       { name: "Gemini", signal: "Model layer", detail: "Applied to personalization, grounded generation, classification, and academic content workflows with explicit validation boundaries.", usedIn: ["Zenko lead pipeline", "VIZO-RAG System", "N8n Automation"] },
-      { name: "MCP concepts", signal: "Tool connectivity concepts", detail: "A working knowledge area for connecting AI agents to tools and structured context without implying that a specific external MCP server is installed here.", usedIn: ["Agent development environment", "AI engineering workflow"] },
+      { name: "21st.dev MCP", signal: "UI component workflow", detail: "Configured as a development-only remote component search and refinement tool; it does not ship as a frontend runtime dependency or expose credentials to visitors.", usedIn: ["Interactive Tech Stack", "Portfolio UI refinement"] },
       { name: "Multi-agent orchestration", signal: "System design", detail: "Coordinating specialized agents with shared instructions, handoffs, review loops, and human approval gates.", usedIn: ["Freelance AI Automation", "AI Job Application Agent"] },
     ],
   },
