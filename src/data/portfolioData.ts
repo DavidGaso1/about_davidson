@@ -1,6 +1,5 @@
 export const PERSONAL_INFO = {
-  name: "Davidson Chiemezuo",
-  fullName: "Ahuruezenma Davidson Chiemezuo",
+  name: "Ahuruezenma Davidson Chiemezuo",
   title: "Agentic AI Developer",
   tagline: "Building intelligent systems, one agent at a time.",
   location: "Abuja, Nigeria",
@@ -12,7 +11,7 @@ export const PERSONAL_INFO = {
   bioShort: "I bridge AI innovation with data-driven automation. With a foundation in Sociology & Anthropology, I bring a unique human-centric lens to building intelligent systems that actually work for people.",
   avatar: "/profile.jpg",
   resumePdf: "/Ahuruezenma_Davidson_Chiemezuo_Resume.pdf",
-  resumeFileName: "Davidson_Chiemezuo_Resume.pdf",
+  resumeFileName: "Ahuruezenma_Davidson_Chiemezuo_Resume.pdf",
   openTo: ["Remote (Permanent)", "AI Startups", "US Hours Compatible"]
 };
 

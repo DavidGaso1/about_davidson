@@ -91,6 +91,20 @@ export function Projects() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (!selectedProject) return;
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setSelectedProject(null);
+    };
+    document.addEventListener('keydown', handleKey);
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', handleKey);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [selectedProject]);
+
   // Lead with the projects most relevant to AI Engineer / RAG roles.
   // Keep the automated news digest at the end of the supporting-project list.
   const featured = FEATURED_PROJECT_IDS
@@ -132,15 +146,24 @@ export function Projects() {
               className={`scroll-reveal scroll-reveal-delay-${idx + 1} glass-card overflow-hidden hover-lift group cursor-pointer`}
               onClick={() => setSelectedProject(project)}
             >
-              <div className="h-40 bg-gradient-to-br from-sky-500/10 via-purple-500/10 to-cyan-500/10 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <Sparkles className="w-8 h-8 text-sky-400/50 mx-auto mb-2" />
-                    <span className="font-mono text-[10px] uppercase tracking-widest text-slate-500">
-                      {project.category}
-                    </span>
+              <div className="relative h-40 overflow-hidden bg-gradient-to-br from-sky-500/10 via-purple-500/10 to-cyan-500/10">
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={`${project.title} preview`}
+                    className="absolute inset-0 h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center">
+                      <Sparkles className="w-8 h-8 text-sky-400/50 mx-auto mb-2" />
+                      <span className="font-mono text-[10px] uppercase tracking-widest text-slate-500">
+                        {project.category}
+                      </span>
+                    </div>
                   </div>
-                </div>
+                )}
                 <div className="absolute inset-x-3 top-3 flex items-start justify-between gap-2">
                   <StatusBadge status={project.status} />
                   {project.client && (
@@ -222,6 +245,9 @@ export function Projects() {
           onClick={() => setSelectedProject(null)}
         >
           <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="project-modal-title"
             className="glass-card max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 md:p-8"
             onClick={(e) => e.stopPropagation()}
           >
@@ -230,7 +256,7 @@ export function Projects() {
                 <span className="font-mono text-[10px] uppercase tracking-widest text-sky-400">
                   {selectedProject.category} {selectedProject.client && `\u2022 ${selectedProject.client}`}
                 </span>
-                <h3 className="text-2xl font-bold text-slate-100 mt-1">
+                <h3 id="project-modal-title" className="text-2xl font-bold text-slate-100 mt-1">
                   {selectedProject.title}
                 </h3>
                 <div className="mt-2">

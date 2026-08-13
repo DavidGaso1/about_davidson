@@ -1,4 +1,4 @@
-# Davidson Chiemezuo — Agentic AI Developer
+# Ahuruezenma Davidson Chiemezuo — Agentic AI Developer
 
 **Location:** Abuja, Nigeria · **Phone:** [+2349061505041](tel:+2349061505041) · **Email:** [ahuruezenmadavidson@gmail.com](mailto:ahuruezenmadavidson@gmail.com) · **Portfolio:** [david.dgi.qzz.io](https://david.dgi.qzz.io) · **GitHub:** [github.com/DavidGaso1](https://github.com/DavidGaso1) · **LinkedIn:** [linkedin.com/in/davidson-ahuruezenma-33a773294](https://linkedin.com/in/davidson-ahuruezenma-33a773294)
 
@@ -120,7 +120,7 @@ Systems theory, organizational behavior, and qualitative research — applied to
 
 ## 🔧 About This Repository
 
-This repository hosts the portfolio website itself — a modern, interactive showcase built with **React 19, TypeScript, Vite, Tailwind CSS**, and a custom **WebGL matrix-rain shader**.
+This repository hosts the portfolio website itself — a modern, interactive showcase built with **React 19, TypeScript, Vite, Tailwind CSS**, and an **animated systems-grid hero** with SVG data-flow visuals.
 
 The site includes an interactive **Tech Stack constellation** rather than a static skills list. Visitors can filter the stack by AI & Agents, Data & Retrieval, Automation & Cloud, Product Engineering, and Reliability & Quality, then select a technology to see the systems and projects where it is used. The visual experience is implemented with the existing React/Tailwind stack; the optional 21st.dev MCP is development-only and is not required at runtime.
 

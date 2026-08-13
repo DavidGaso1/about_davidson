@@ -69,13 +69,15 @@ export function Navbar() {
           className="md:hidden text-slate-300"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-menu"
         >
           {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden bg-[#0f172a]/95 backdrop-blur-xl border-t border-white/5 px-6 py-6">
+        <div id="mobile-menu" className="md:hidden bg-[#0f172a]/95 backdrop-blur-xl border-t border-white/5 px-6 py-6">
           <div className="flex flex-col gap-4">
             {NAV_LINKS.map((link) => (
               <a

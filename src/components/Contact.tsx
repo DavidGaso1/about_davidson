@@ -105,9 +105,10 @@ export function Contact() {
             {submitted ? (
               <div className="glass-card p-8 text-center">
                 <CheckCircle className="w-12 h-12 text-emerald-400 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-slate-100 mb-2">Message Sent</h3>
+                <h3 className="text-xl font-semibold text-slate-100 mb-2">Email draft ready</h3>
                 <p className="text-slate-400 text-sm">
-                  Thanks for reaching out. I'll get back to you soon.
+                  Your email app should have opened with your message. If it didn&apos;t,
+                  email me directly at {PERSONAL_INFO.email}.
                 </p>
               </div>
             ) : (

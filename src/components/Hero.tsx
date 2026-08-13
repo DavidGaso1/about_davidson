@@ -57,7 +57,7 @@ export function Hero() {
   return (      <section className="relative isolate flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-[#08111f] px-6 pt-28 pb-20 md:pt-32 md:pb-24">
         <TechGridBackground />
 
-        <div className="relative z-10 mx-auto block w-full max-w-4xl text-center" role="doc-endnote" aria-label="Current availability: AI Engineer open to remote roles">            <div className="mb-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
+        <div className="relative z-10 mx-auto block w-full max-w-4xl text-center">            <div className="mb-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
             <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3.5 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-emerald-300">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full motion-safe:animate-ping rounded-full bg-emerald-400 opacity-70" />
@@ -70,6 +70,9 @@ export function Hero() {
             </span>
           </div>
 
+          <p className="mb-3 font-mono text-xs uppercase tracking-[0.28em] text-slate-500">
+            {PERSONAL_INFO.name}
+          </p>
           <div className="mb-6 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.24em] text-sky-400">
             <span className="opacity-60">$</span>
             <span>ai engineer · systems architecture</span>
@@ -82,6 +85,9 @@ export function Hero() {
             </span>
           </h1>
 
+          <span className="sr-only">
+            Roles: AI Engineer, Agentic AI Developer, Automation Specialist, RAG Systems Builder.
+          </span>
           <div
             aria-hidden="true"
             className="mt-8 inline-flex h-9 items-center justify-center gap-2 rounded-md font-mono text-base text-slate-400 md:text-lg"
