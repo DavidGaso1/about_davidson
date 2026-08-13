@@ -63,7 +63,6 @@ const technologyLinks: Record<string, string> = {
   'VIZO-RAG System': 'https://github.com/DavidGaso1/VIZO-RAG',
   HealthRAG: 'https://github.com/DavidGaso1/HealthRAG',
   'This portfolio': 'https://github.com/DavidGaso1/about_davidson',
-  NutriDine: 'https://github.com/DavidGaso1/restaurant-recommendation-system',
   'Financial statement pipeline': 'https://github.com/DavidGaso1/financial-statement-pipeline',
   'AI-News-Update': 'https://github.com/DavidGaso1/AI-News-Update',
   'R-Medy': 'https://github.com/DavidGaso1/R-Medy',
