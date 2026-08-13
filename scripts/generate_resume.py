@@ -307,17 +307,28 @@ pdf.project(
     [],
 )
 pdf.project(
-    "12. n8n Automation Hub",
-    "Reusable AI workflow collection covering academic research, task management, API integrations, Gemini, Supabase, Gmail, Google Calendar, and Telegram.",
+    "12. AI Email & Task Assistant",
+    "Personal AI assistant in n8n that triages email, manages tasks, and sends daily briefings via Telegram — powered by Google Gemini with a Google Tasks/Calendar/Drive tool suite.",
     [
-        "Uses structured JSON outputs, context-aware retrieval, output validation, and multi-model fallback patterns.",
-        "Demonstrates practical automation design across email parsing, summarization, task tracking, and scheduling."
+        "Watches Gmail with sender/keyword filtering and evaluates follow-ups before acting.",
+        "Runs a Gemini agent with a tool suite (Tasks, Gmail, Drive, Calendar) and Supabase-backed conversation memory.",
+        "Automates a daily TODO, transaction alerts, and a Monday weekly report to Telegram + Google Sheets."
     ],
-    "n8n · Gemini · Supabase · Gmail · Google Calendar · Telegram",
-    [("GitHub: github.com/DavidGaso1/n8n-automation", "https://github.com/DavidGaso1/n8n-automation")],
+    "n8n · Gemini · Telegram · Google Tasks · Supabase",
+    [("GitHub: github.com/DavidGaso1/ai-email-task-assistant", "https://github.com/DavidGaso1/ai-email-task-assistant")],
 )
 pdf.project(
-    "13. AI-News-Update — Automated News Digest",
+    "13. AI Academic Assignment Generator",
+    "n8n workflow that turns a short Telegram query into a fully formatted academic assignment — Gemini-generated content converted to a strict HTML document and saved to Google Drive/Sheets.",
+    [
+        "Telegram intake to Gemini agent to HTML formatting (12pt Times New Roman, double spacing, 1-inch margins).",
+        "Automatic record-keeping: every assignment is uploaded to Google Drive and logged to Google Sheets."
+    ],
+    "n8n · Gemini · Telegram · Google Drive · Google Sheets",
+    [("GitHub: github.com/DavidGaso1/ai-academic-assignment-generator", "https://github.com/DavidGaso1/ai-academic-assignment-generator")],
+)
+pdf.project(
+    "14. AI-News-Update — Automated News Digest",
     "A fully automated daily AI news digest. This is intentionally last: it demonstrates scheduled automation, data freshness, deduplication, delivery, deployment, and CI reliability after the core AI engineering work above.",
     [
         "Runs from a GitHub Actions cron at 6 AM, fetches RSS sources, and publishes a public dashboard on Vercel.",

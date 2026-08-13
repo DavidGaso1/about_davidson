@@ -422,7 +422,7 @@ export const PROJECTS = [
       "Evidence-based content with proper references"
     ],
     category: "AI System",
-    github: "https://github.com/DavidGaso1/n8n-automation",
+    github: "https://github.com/DavidGaso1/ai-academic-assignment-generator",
     image: null,
     status: "ready",
     metrics: ["Zero manual formatting", "Citations auto-included"]
@@ -460,6 +460,24 @@ export const PROJECTS = [
     ],
     category: "AI System",
     github: "https://github.com/DavidGaso1/nutrivoice",
+    image: null,
+    status: "ready"
+  },
+  {
+    id: 16,
+    title: "AI Email & Task Assistant",
+    client: null,
+    description: "A personal AI assistant in n8n — email triage, task management, daily briefings, transaction alerts, and weekly reports via Telegram and Google Gemini.",
+    longDescription: "An n8n workflow that watches Gmail, runs a Gemini agent with a Google Tasks/Calendar/Drive tool suite, and delivers summaries, follow-ups, a daily TODO, transaction alerts, and weekly reports through Telegram — with Supabase-backed vector memory and Postgres chat history.",
+    tech: ["n8n", "Google Gemini", "Telegram", "Google Tasks", "Supabase"],
+    highlights: [
+      "Email triage with sender/keyword filtering and follow-up evaluation",
+      "Gemini agent core with Google Tasks / Calendar / Drive tool suite",
+      "Daily TODO briefing and Monday weekly reports via Telegram",
+      "Transaction alerts and Supabase-backed conversation memory"
+    ],
+    category: "Automation",
+    github: "https://github.com/DavidGaso1/ai-email-task-assistant",
     image: null,
     status: "ready"
   }

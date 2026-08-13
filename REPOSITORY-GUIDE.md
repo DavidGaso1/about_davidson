@@ -20,7 +20,8 @@ A plain-language guide to every repository on [github.com/DavidGaso1](https://gi
 | [ai-nutrition-advisor](#ai-nutrition-advisor) | Personalized nutrition guidance for Nigerian + international foods | AI / RAG |
 | [nutrivoice](#nutrivoice) | Voice nutrition assistant in English, Igbo, Hausa & Yoruba | AI / voice |
 | [AI-News-Update](#ai-news-update) | Daily AI-news digest that emails itself to you | Automation |
-| [n8n-automation](#n8n-automation) | Reusable AI automation workflows (assignments, email triage) | Automation |
+| [ai-email-task-assistant](#ai-email-task-assistant) | Personal AI assistant — email triage, tasks, daily briefings | Automation |
+| [ai-academic-assignment-generator](#ai-academic-assignment-generator) | Telegram query → formatted academic assignment | Automation |
 | [theldoforce](#theldoforce) | Security-company ops: schedules & alerts to the right person/channel | Automation (client) |
 | [zenko-limited](#zenko-limited) | Lead-capture pipeline with AI-personalized follow-ups | Automation (client) |
 | [financial-statement-pipeline](#financial-statement-pipeline) | Turn scanned Nigerian financial statements into clean, validated data | Data |
@@ -145,20 +146,36 @@ A plain-language guide to every repository on [github.com/DavidGaso1](https://gi
 
 ---
 
-### n8n-automation
+### ai-email-task-assistant
 
-**What it is.** A library of ready-to-import n8n workflows: an AI academic-assignment generator and an email-triage assistant, both powered by Gemini.
+**What it is.** A personal AI assistant built in n8n: it watches Gmail, runs a Gemini agent with a Google Tasks/Calendar/Drive tool suite, and delivers summaries, follow-ups, a daily TODO, transaction alerts, and weekly reports through Telegram.
 
-**Problem it solves.** Common tasks (formatting assignments, triaging inboxes) are repetitive; these workflows package the automation so anyone can import and reuse them.
+**Problem it solves.** Inbox and task overload — the manual grind of reading, triaging, and following up. This automates the busywork and keeps one digestible daily + weekly briefing.
 
 **Phases & challenges.**
-1. **Workflow design** — structured JSON inputs/outputs with validation.
-2. **AI integration** — Gemini for generation and summarization.
-3. **Delivery** — Telegram output with formatting and scheduling.
+1. **Triage** — a Gmail trigger filtered by sender/keyword, with follow-up evaluation.
+2. **Agent core** — a Gemini agent with a customizable prompt and a tool suite (Tasks, Gmail, Drive, Calendar).
+3. **Automation** — daily TODO (24H trigger), transaction alerts, and Monday weekly reports.
+4. **Memory** — Supabase vector store + Postgres chat history for cross-session context.
 
-**Who it's for.** Students, busy professionals, and anyone learning n8n + AI workflow automation.
+**Who it's for.** Busy professionals and anyone evaluating AI-driven personal productivity automation.
 
-**Stack.** n8n · Gemini · Telegram · Gmail
+**Stack.** n8n · Gemini · Telegram · Google Tasks · Supabase
+
+### ai-academic-assignment-generator
+
+**What it is.** An n8n workflow that turns a short Telegram query into a fully formatted academic assignment: Gemini drafts the content, code nodes apply strict formatting, and the result is saved to Google Drive and Sheets.
+
+**Problem it solves.** Formatting academic assignments by hand is tedious and error-prone; this standardizes the output so submissions are consistently formatted.
+
+**Phases & challenges.**
+1. **Intake** — a Telegram bot receives the assignment request.
+2. **Generate** — Gemini drafts the structured content.
+3. **Format & deliver** — HTML with strict academic formatting, uploaded to Google Drive and logged to Google Sheets.
+
+**Who it's for.** Students and anyone learning n8n + AI content generation.
+
+**Stack.** n8n · Gemini · Telegram · Google Drive · Google Sheets
 
 ---
 
@@ -340,7 +357,7 @@ A plain-language guide to every repository on [github.com/DavidGaso1](https://gi
 The repositories are one theme viewed from different angles: **take a real, messy problem and make it reliable, observable, and safe.**
 
 - The **RAG/agent** projects (VIZO-RAG, HealthRAG, ai-nutrition-advisor, Job-Agent) show how to make AI *grounded and trustworthy* instead of impressive-but-wrong.
-- The **automation** projects (AI-News-Update, n8n-automation, theldoforce, zenko-limited) show how to move AI from a demo into *production workflows* with retries, alerting, and human review.
+- The **automation** projects (AI-News-Update, ai-email-task-assistant, ai-academic-assignment-generator, theldoforce, zenko-limited) show how to move AI from a demo into *production workflows* with retries, alerting, and human review.
 - The **data** projects (financial-statement-pipeline, data-analysis-projects, Health-Care-Repo, Data-Cleaning-With-MySQL) show the *foundation* — clean, validated data.
 - The **web** projects (restaurant-recommender, R-Medy, Remedy-care, about_davidson) show the *delivery* — real products people actually use.
 

@@ -78,7 +78,8 @@ Built cloud infrastructure and automation workflows supporting enterprise data o
 | [HealthRAG](https://github.com/DavidGaso1/HealthRAG) | Nigeria-first, synthetic-only health triage prototype — rule-first emergency detection, retrieval-grounded answers, fail-closed privacy boundary. | Ready |
 | [financial-statement-pipeline](https://github.com/DavidGaso1/financial-statement-pipeline) | OCR + extraction pipeline for scanned Nigerian financial statements — validation, confidence scoring, exporters, full test suite. | Showcase Ready |
 | [R-Medy](https://github.com/DavidGaso1/R-Medy) · [Live](https://rmedy.qzz.io) | Natural health solutions web app — Next.js, AI-powered lead capture, secure webhooks. | Ready |
-| [n8n-automation](https://github.com/DavidGaso1/n8n-automation) | Collection of AI automation workflows with Gemini and Telegram. | Ready |
+| [ai-email-task-assistant](https://github.com/DavidGaso1/ai-email-task-assistant) | Personal AI assistant — email triage, task management, and daily briefings via Telegram and Gemini. | Ready |
+| [ai-academic-assignment-generator](https://github.com/DavidGaso1/ai-academic-assignment-generator) | n8n workflow that turns Telegram queries into formatted academic assignments. | Ready |
 | [data-analysis-projects](https://github.com/DavidGaso1/data-analysis-projects) | Python, SQL and Jupyter data analysis portfolio. | Ready |
 | [AI-News-Update](https://github.com/DavidGaso1/AI-News-Update) · [Live](https://ainl.vercel.app) | Fully automated daily AI news digest — cron-fetched with cross-day dedup, emailed to subscribers, deployed to Vercel. CI-tested pipeline. | Showcase Ready |
 
