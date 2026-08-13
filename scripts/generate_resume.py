@@ -273,14 +273,14 @@ pdf.project(
     [],
 )
 pdf.project(
-    "9. N8n Automation Hub",
+    "9. n8n Automation Hub",
     "Reusable AI workflow collection covering academic research, task management, API integrations, Gemini, Supabase, Gmail, Google Calendar, and Telegram.",
     [
         "Uses structured JSON outputs, context-aware retrieval, output validation, and multi-model fallback patterns.",
         "Demonstrates practical automation design across email parsing, summarization, task tracking, and scheduling."
     ],
     "n8n · Gemini · Supabase · Gmail · Google Calendar · Telegram",
-    [("GitHub: github.com/DavidGaso1/N8n-Automation", "https://github.com/DavidGaso1/N8n-Automation")],
+    [("GitHub: github.com/DavidGaso1/n8n-automation", "https://github.com/DavidGaso1/n8n-automation")],
 )
 pdf.project(
     "10. AI-News-Update — Automated News Digest",
