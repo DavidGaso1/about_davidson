@@ -319,19 +319,19 @@ export const PROJECTS = [
     id: 8,
     title: "NutriDine — AI Restaurant Recommendation",
     client: null,
-    description: "An AI-powered restaurant recommendation system with hybrid collaborative + content-based filtering, location and time awareness, and a health-conscious RAG advisor.",
-    longDescription: "NutriDine blends collaborative and content-based filtering with location- and time-aware cues to recommend restaurants around Abuja, Nigeria. Includes an AI Health Advisor with RAG for personalized nutrition analysis, allergen-aware menu analysis, and real-time learning from user interactions. Currently a private, in-development project.",
-    tech: ["FastAPI", "PostgreSQL", "React", "ChromaDB", "Gemini", "Groq"],
+    description: "An AI-powered restaurant recommendation engine with hybrid collaborative + content-based filtering, location and time awareness, and a health-conscious RAG advisor.",
+    longDescription: "NutriDine blends collaborative and content-based filtering with location- and time-aware cues to recommend restaurants around Abuja, Nigeria. The work is split across three focused, CI-tested public repositories: the restaurant recommendation engine, the AI Health Advisor (RAG nutrition analysis), and a multilingual voice agent.",
+    tech: ["FastAPI", "PostgreSQL", "React", "scikit-learn", "ChromaDB", "Gemini", "Groq"],
     highlights: [
       "Hybrid collaborative + content-based filtering",
       "Location- and time-aware recommendations",
-      "AI Health Advisor with RAG for nutrition analysis",
+      "Split into three focused, CI-tested public repos",
       "Real-time learning from user interactions"
     ],
     category: "AI System",
-    github: null,
+    github: "https://github.com/DavidGaso1/restaurant-recommender",
     image: null,
-    status: "under-work"
+    status: "ready"
   },
   {
     id: 9,
@@ -426,6 +426,42 @@ export const PROJECTS = [
     image: null,
     status: "ready",
     metrics: ["Zero manual formatting", "Citations auto-included"]
+  },
+  {
+    id: 14,
+    title: "AI Nutrition Advisor — RAG Health Analysis",
+    client: null,
+    description: "A RAG-powered nutrition advisor with ChromaDB vector search, allergen detection, and Groq/Gemini LLM support — split out of NutriDine.",
+    longDescription: "A retrieval-augmented nutrition advisor that gives evidence-based, personalized health and nutrition guidance for Nigerian and international foods. Uses ChromaDB for vector storage with semantic search, detects allergens with severity levels, and supports Groq and Google Gemini backends — with a rule-based analysis path that works without API keys.",
+    tech: ["Python", "ChromaDB", "LangChain", "Groq", "Gemini"],
+    highlights: [
+      "RAG retrieval over a Nigerian food knowledge base",
+      "Allergen detection with severity levels and hidden sources",
+      "Multi-LLM support (Groq + Gemini) with rule-based fallback",
+      "CI-validated module structure"
+    ],
+    category: "AI System",
+    github: "https://github.com/DavidGaso1/ai-nutrition-advisor",
+    image: null,
+    status: "ready"
+  },
+  {
+    id: 15,
+    title: "NutriVoice — Multilingual Voice Nutrition Agent",
+    client: null,
+    description: "A voice-first AI agent for nutritional consultations, appointment booking, and healthy food ordering in Nigeria — English, Igbo, Hausa, and Yoruba.",
+    longDescription: "A voice-first nutrition agent built with React, TypeScript, and Google Gemini that handles live nutritional consultations, appointment booking, and healthy food ordering across four Nigerian languages (English, Igbo, Hausa, Yoruba). Features real-time transcripts and audio visualization, split out of NutriDine.",
+    tech: ["React", "TypeScript", "Vite", "Gemini"],
+    highlights: [
+      "Live voice consultations powered by Google Gemini",
+      "Multilingual: English, Igbo, Hausa, and Yoruba",
+      "Appointment booking and food ordering flows",
+      "Real-time transcript + audio visualization"
+    ],
+    category: "AI System",
+    github: "https://github.com/DavidGaso1/nutrivoice",
+    image: null,
+    status: "ready"
   }
 ];
 
