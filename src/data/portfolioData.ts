@@ -44,10 +44,10 @@ export const TECH_STACK = [
     description: "The storage, embedding, validation, and document-processing tools that make AI outputs useful and traceable.",
     technologies: [
       { name: "Python", signal: "Primary engineering language", detail: "Used for orchestration, validation, data processing, API services, evaluation suites, and automation workers.", usedIn: ["All production automation", "HealthRAG", "Financial pipeline"] },
-      { name: "ChromaDB", signal: "Vector persistence", detail: "Persisting embeddings and retrieving semantically relevant evidence for source-grounded assistants.", usedIn: ["VIZO-RAG System", "NutriDine"] },
+      { name: "ChromaDB", signal: "Vector persistence", detail: "Persisting embeddings and retrieving semantically relevant evidence for source-grounded assistants.", usedIn: ["VIZO-RAG System", "restaurant-recommender"] },
       { name: "Hugging Face embeddings", signal: "Semantic indexing", detail: "Creating local embeddings for offline-friendly retrieval experiments and repeatable evaluation.", usedIn: ["VIZO-RAG System"] },
       { name: "Supabase", signal: "Operational data", detail: "Providing durable storage, workflow state, and integration points for production automation systems.", usedIn: ["Zenko", "Theldoforce", "DGI monitoring", "ViZO RAG"] },
-      { name: "SQL / PostgreSQL", signal: "Structured persistence", detail: "Modeling user-scoped records, operational data, and validated datasets with a focus on clear ownership boundaries.", usedIn: ["AI Job Application Agent", "NutriDine", "Healthcare data project"] },
+      { name: "SQL / PostgreSQL", signal: "Structured persistence", detail: "Modeling user-scoped records, operational data, and validated datasets with a focus on clear ownership boundaries.", usedIn: ["AI Job Application Agent", "restaurant-recommender", "Healthcare data project"] },
       { name: "OCR & validation", signal: "Document intelligence", detail: "Turning scanned financial statements into structured outputs with parsing, confidence scoring, and export checks.", usedIn: ["Financial statement pipeline"] },
     ],
   },
@@ -70,8 +70,8 @@ export const TECH_STACK = [
     eyebrow: "Experience layer",
     description: "The frontend, API, browser, and design technologies used to turn systems into clear, usable products.",
     technologies: [
-      { name: "React / TypeScript", signal: "Interactive interfaces", detail: "Building maintainable interfaces with typed data, responsive components, stateful interactions, and accessible controls.", usedIn: ["This portfolio", "NutriDine"] },
-      { name: "FastAPI", signal: "Typed API services", detail: "Providing structured backend APIs, health checks, authentication boundaries, and machine-readable errors.", usedIn: ["AI Job Application Agent", "NutriDine"] },
+      { name: "React / TypeScript", signal: "Interactive interfaces", detail: "Building maintainable interfaces with typed data, responsive components, stateful interactions, and accessible controls.", usedIn: ["This portfolio", "restaurant-recommender"] },
+      { name: "FastAPI", signal: "Typed API services", detail: "Providing structured backend APIs, health checks, authentication boundaries, and machine-readable errors.", usedIn: ["AI Job Application Agent", "restaurant-recommender"] },
       { name: "Next.js", signal: "Production web delivery", detail: "Shipping responsive client-facing experiences with typed components, Tailwind styling, and deployment documentation.", usedIn: ["R-Medy"] },
       { name: "Tailwind CSS", signal: "Design system", detail: "Creating consistent responsive layouts, visual hierarchy, hover states, and polished dark interfaces quickly.", usedIn: ["This portfolio", "R-Medy"] },
       { name: "Playwright", signal: "Browser automation", detail: "Preparing browser workflows with explicit safety gates and human review before any consequential submission.", usedIn: ["AI Job Application Agent"] },
@@ -317,10 +317,10 @@ export const PROJECTS = [
   },
   {
     id: 8,
-    title: "NutriDine — AI Restaurant Recommendation",
+    title: "restaurant-recommender — AI Restaurant Recommendation Engine",
     client: null,
-    description: "An AI-powered restaurant recommendation engine with hybrid collaborative + content-based filtering, location and time awareness, and a health-conscious RAG advisor.",
-    longDescription: "NutriDine blends collaborative and content-based filtering with location- and time-aware cues to recommend restaurants around Abuja, Nigeria. The work is split across three focused, CI-tested public repositories: the restaurant recommendation engine, the AI Health Advisor (RAG nutrition analysis), and a multilingual voice agent.",
+    description: "An AI-powered restaurant recommendation engine with hybrid collaborative + content-based filtering, location and time awareness.",
+    longDescription: "restaurant-recommender blends collaborative and content-based filtering with location- and time-aware cues to recommend restaurants around Abuja, Nigeria. Originally part of the NutriDine product line, the work is split across three focused, CI-tested public repositories: this recommendation engine, the AI Nutrition Advisor (RAG nutrition analysis), and the NutriVoice multilingual voice agent.",
     tech: ["FastAPI", "PostgreSQL", "React", "scikit-learn", "ChromaDB", "Gemini", "Groq"],
     highlights: [
       "Hybrid collaborative + content-based filtering",
@@ -422,7 +422,7 @@ export const PROJECTS = [
       "Evidence-based content with proper references"
     ],
     category: "AI System",
-    github: "https://github.com/DavidGaso1/N8n-Automation",
+    github: "https://github.com/DavidGaso1/n8n-automation",
     image: null,
     status: "ready",
     metrics: ["Zero manual formatting", "Citations auto-included"]

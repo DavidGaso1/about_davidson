@@ -214,7 +214,41 @@ pdf.project(
     [("GitHub: github.com/DavidGaso1/HealthRAG", "https://github.com/DavidGaso1/HealthRAG")],
 )
 pdf.project(
-    "4. Financial Statement Extraction Pipeline",
+    "4. AI Restaurant Recommendation Engine",
+    "Hybrid AI recommendation system blending collaborative and content-based filtering with location and time awareness — a FastAPI backend with a React frontend, split out of the NutriDine product line.",
+    [
+        "Combines collaborative + content-based filtering in scikit-learn for personalized, location- and time-aware restaurant suggestions.",
+        "FastAPI endpoints for recommendations, cuisine suggestions, user profiles, and interaction tracking.",
+        "Verified with 33 backend tests plus a frontend build in CI.",
+    ],
+    "FastAPI · React · scikit-learn · SQLAlchemy · CI",
+    [("GitHub: github.com/DavidGaso1/restaurant-recommender", "https://github.com/DavidGaso1/restaurant-recommender")],
+)
+pdf.project(
+    "5. AI Nutrition Advisor",
+    "RAG nutrition advisor providing evidence-based, personalized guidance for Nigerian and international foods — allergen detection, ChromaDB semantic search, and Groq/Gemini backends with a rule-based offline path.",
+    [
+        "Retrieves from a Nigerian food knowledge base via ChromaDB vector search with semantic matching.",
+        "Detects allergens with severity levels and hidden sources; tailors advice to health goals and dietary preferences.",
+        "Multi-LLM support (Groq + Gemini) with a rule-based analysis path that works fully offline without API keys.",
+        "CI-enforced offline-loading guarantee plus a rule-based health-analysis test suite.",
+    ],
+    "Python · ChromaDB · Groq · Gemini · Rule-based fallback",
+    [("GitHub: github.com/DavidGaso1/ai-nutrition-advisor", "https://github.com/DavidGaso1/ai-nutrition-advisor")],
+)
+pdf.project(
+    "6. NutriVoice — Multilingual Voice Nutrition Agent",
+    "Voice-first AI agent for nutrition consultations, appointment booking, and healthy food ordering in Nigeria — speaking English, Igbo, Hausa, and Yoruba.",
+    [
+        "Live, speech-driven consultations with real-time transcripts and audio visualization.",
+        "Multilingual support across English, Igbo, Hausa, and Yoruba for broader accessibility.",
+        "Connected appointment booking and healthy food ordering flows with location awareness.",
+    ],
+    "React · TypeScript · Vite · Gemini",
+    [("GitHub: github.com/DavidGaso1/nutrivoice", "https://github.com/DavidGaso1/nutrivoice")],
+)
+pdf.project(
+    "7. Financial Statement Extraction Pipeline",
     "Document-processing pipeline for scanned Nigerian financial statements. It converts OCR input into structured, validated data and supports confidence scoring, detection, parsing, and export workflows.",
     [
         "Covers OCR ingestion, number parsing, field detection, validation, confidence scoring, and exporters.",
@@ -225,7 +259,7 @@ pdf.project(
     [("GitHub: github.com/DavidGaso1/financial-statement-pipeline", "https://github.com/DavidGaso1/financial-statement-pipeline")],
 )
 pdf.project(
-    "5. R-Medy — Natural Health Solutions",
+    "8. R-Medy — Natural Health Solutions",
     "Production web application for a natural-health brand with a modern Next.js/TypeScript frontend, AI-assisted lead capture, secure webhook integration, deployment documentation, and a public production site.",
     [
         "Built responsive product and content experiences with TypeScript, Tailwind, and Next.js conventions.",
@@ -240,7 +274,7 @@ pdf.project(
 pdf.add_page()
 pdf.section("Additional Production & Automation Work", "Supporting projects that demonstrate client delivery, infrastructure automation, data engineering, and operational reliability.")
 pdf.project(
-    "6. Lead Generation & Personalization Automation — Zenko Limited",
+    "9. Lead Generation & Personalization Automation — Zenko Limited",
     "End-to-end DTC lead pipeline from website webhook to auditable backup, Python validation, Gemini personalization, Supabase persistence, and automated email delivery.",
     [
         "Uses an Excel/Google Drive backup before validation to preserve an operational audit trail.",
@@ -251,7 +285,7 @@ pdf.project(
     [],
 )
 pdf.project(
-    "7. Operations & Personnel Alert System — Theldoforce",
+    "10. Operations & Personnel Alert System — Theldoforce",
     "Bi-directional operations automation for security services, distributing schedules, security alerts, and task assignments across Telegram, Gmail, and WhatsApp.",
     [
         "Uses AI-powered tiering by recipient role so each team member receives relevant detail instead of broadcast noise.",
@@ -262,7 +296,7 @@ pdf.project(
     [("Workflow repository: github.com/DavidGaso1/theldoforce", "https://github.com/DavidGaso1/theldoforce")],
 )
 pdf.project(
-    "8. AWS Infrastructure Error Monitoring — DGI Integrated Services",
+    "11. AWS Infrastructure Error Monitoring — DGI Integrated Services",
     "Fault-tolerant monitoring workflow that receives secured AWS error signals, classifies them with AI assistance, and pushes immediate Telegram alerts to operations teams.",
     [
         "Moves incident detection from manual log review toward near-real-time notification.",
@@ -273,7 +307,7 @@ pdf.project(
     [],
 )
 pdf.project(
-    "9. n8n Automation Hub",
+    "12. n8n Automation Hub",
     "Reusable AI workflow collection covering academic research, task management, API integrations, Gemini, Supabase, Gmail, Google Calendar, and Telegram.",
     [
         "Uses structured JSON outputs, context-aware retrieval, output validation, and multi-model fallback patterns.",
@@ -283,7 +317,7 @@ pdf.project(
     [("GitHub: github.com/DavidGaso1/n8n-automation", "https://github.com/DavidGaso1/n8n-automation")],
 )
 pdf.project(
-    "10. AI-News-Update — Automated News Digest",
+    "13. AI-News-Update — Automated News Digest",
     "A fully automated daily AI news digest. This is intentionally last: it demonstrates scheduled automation, data freshness, deduplication, delivery, deployment, and CI reliability after the core AI engineering work above.",
     [
         "Runs from a GitHub Actions cron at 6 AM, fetches RSS sources, and publishes a public dashboard on Vercel.",
