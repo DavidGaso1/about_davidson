@@ -34,6 +34,22 @@ const REPOS = [
     badge: 'https://github.com/DavidGaso1/financial-statement-pipeline/actions/workflows/ci.yml/badge.svg',
     topics: ['Python', 'OCR', 'Data'],
   },
+  {
+    name: 'ai-nutrition-advisor',
+    description: 'RAG-powered nutrition advisor — ChromaDB vector search, allergen detection, Groq/Gemini LLM support, and a rule-based offline analysis path.',
+    url: 'https://github.com/DavidGaso1/ai-nutrition-advisor',
+    live: null,
+    badge: 'https://github.com/DavidGaso1/ai-nutrition-advisor/actions/workflows/ci.yml/badge.svg',
+    topics: ['Python', 'ChromaDB', 'RAG'],
+  },
+  {
+    name: 'nutrivoice',
+    description: 'Voice-first AI nutrition agent for Nigeria (English, Igbo, Hausa, Yoruba) — consultations, booking, and food ordering via Google Gemini.',
+    url: 'https://github.com/DavidGaso1/nutrivoice',
+    live: null,
+    badge: 'https://github.com/DavidGaso1/nutrivoice/actions/workflows/ci.yml/badge.svg',
+    topics: ['React', 'TypeScript', 'Gemini'],
+  },
 ];
 
 export function GitHubShowcase() {
