@@ -320,7 +320,7 @@ export const PROJECTS = [
     title: "NutriDine — AI Restaurant Recommendation",
     client: null,
     description: "An AI-powered restaurant recommendation system with hybrid collaborative + content-based filtering, location and time awareness, and a health-conscious RAG advisor.",
-    longDescription: "NutriDine blends collaborative and content-based filtering with location- and time-aware cues to recommend restaurants around Abuja, Nigeria. Includes an AI Health Advisor with RAG for personalized nutrition analysis, allergen-aware menu analysis, and real-time learning from user interactions.",
+    longDescription: "NutriDine blends collaborative and content-based filtering with location- and time-aware cues to recommend restaurants around Abuja, Nigeria. Includes an AI Health Advisor with RAG for personalized nutrition analysis, allergen-aware menu analysis, and real-time learning from user interactions. Currently a private, in-development project.",
     tech: ["FastAPI", "PostgreSQL", "React", "ChromaDB", "Gemini", "Groq"],
     highlights: [
       "Hybrid collaborative + content-based filtering",
@@ -329,9 +329,9 @@ export const PROJECTS = [
       "Real-time learning from user interactions"
     ],
     category: "AI System",
-    github: "https://github.com/DavidGaso1/restaurant-recommendation-system",
+    github: null,
     image: null,
-    status: "ready"
+    status: "under-work"
   },
   {
     id: 9,
