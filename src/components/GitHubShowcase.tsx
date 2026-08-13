@@ -11,6 +11,14 @@ const REPOS = [
     topics: ['Python', 'GitHub Actions', 'Automation'],
   },
   {
+    name: 'restaurant-recommender',
+    description: 'AI restaurant recommendation engine (NutriDine) — hybrid collaborative + content-based filtering with location/time awareness.',
+    url: 'https://github.com/DavidGaso1/restaurant-recommender',
+    live: null,
+    badge: 'https://github.com/DavidGaso1/restaurant-recommender/actions/workflows/ci.yml/badge.svg',
+    topics: ['FastAPI', 'React', 'scikit-learn'],
+  },
+  {
     name: 'HealthRAG',
     description: 'Nigeria-first synthetic-only health triage prototype with rule-first emergency detection and grounded RAG answers.',
     url: 'https://github.com/DavidGaso1/HealthRAG',
@@ -75,7 +83,7 @@ export function GitHubShowcase() {
           </a>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {REPOS.map((repo, idx) => (
             <div
               key={repo.name}
