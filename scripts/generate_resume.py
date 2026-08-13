@@ -236,6 +236,9 @@ pdf.project(
     "Python · ChromaDB · Groq · Gemini · Rule-based fallback",
     [("GitHub: github.com/DavidGaso1/ai-nutrition-advisor", "https://github.com/DavidGaso1/ai-nutrition-advisor")],
 )
+# Keep the featured-project list together: project 6 starts a fresh page
+# instead of leaving its heading and first lines at the bottom of page 2.
+pdf.add_page()
 pdf.project(
     "6. NutriVoice — Multilingual Voice Nutrition Agent",
     "Voice-first AI agent for nutrition consultations, appointment booking, and healthy food ordering in Nigeria — speaking English, Igbo, Hausa, and Yoruba.",
@@ -270,8 +273,8 @@ pdf.project(
     [("GitHub: github.com/DavidGaso1/R-Medy", "https://github.com/DavidGaso1/R-Medy"), ("Live: rmedy.qzz.io", "https://rmedy.qzz.io")],
 )
 
-# PAGE 3 — supporting work and AI News last
-pdf.add_page()
+# Continue on page 3 when space allows; automatic page breaks handle the
+# remaining supporting projects without creating orphaned project headings.
 pdf.section("Additional Production & Automation Work", "Supporting projects that demonstrate client delivery, infrastructure automation, data engineering, and operational reliability.")
 pdf.project(
     "9. Lead Generation & Personalization Automation — Zenko Limited",
@@ -306,6 +309,10 @@ pdf.project(
     "AWS API · n8n · Python · AI Model · Supabase · Telegram API",
     [],
 )
+# Start the final continuation page before the remaining projects so no
+# project heading is stranded at the bottom of page 3.
+pdf.add_page()
+pdf.section("Additional Production & Automation Work (continued)")
 pdf.project(
     "12. AI Email & Task Assistant",
     "Personal AI assistant in n8n that triages email, manages tasks, and sends daily briefings via Telegram — powered by Google Gemini with a Google Tasks/Calendar/Drive tool suite.",
