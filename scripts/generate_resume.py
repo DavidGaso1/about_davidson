@@ -248,7 +248,7 @@ pdf.project(
         "Designed as a production workflow with failure visibility instead of a simple happy-path integration."
     ],
     "n8n · Python · Gemini · Supabase · Google Drive · Email API",
-    [("Client automation case study: github.com/DavidGaso1/zenko-limited", "https://github.com/DavidGaso1/zenko-limited")],
+    [],
 )
 pdf.project(
     "7. Operations & Personnel Alert System — Theldoforce",
@@ -270,7 +270,7 @@ pdf.project(
         "Designed for operational clarity: the alert includes the failed step and actionable context."
     ],
     "AWS API · n8n · Python · AI Model · Supabase · Telegram API",
-    [("Workflow repository: github.com/DavidGaso1/zenko-limited", "https://github.com/DavidGaso1/zenko-limited")],
+    [],
 )
 pdf.project(
     "9. N8n Automation Hub",
