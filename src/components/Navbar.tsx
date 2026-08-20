@@ -1,108 +1,40 @@
-import { useState, useEffect } from 'react';
-import { PERSONAL_INFO, NAV_LINKS } from '../data/portfolioData';
-import { Github, Linkedin, Mail, Menu, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { ArrowUpRight, Menu, X } from 'lucide-react';
+import { PERSONAL_INFO } from '../data/portfolioData';
+
+const links = [
+  { label: 'Work', href: '#projects' },
+  { label: 'Approach', href: '#approach' },
+  { label: 'About', href: '#about' },
+];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-[#0f172a]/80 backdrop-blur-xl border-b border-white/5'
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#" className="font-mono text-sm font-semibold text-slate-200 hover:text-sky-400 transition-colors">
-          {PERSONAL_INFO.name}
+    <header className={`fixed inset-x-0 top-0 z-50 transition duration-300 ${scrolled ? 'border-b bg-[#f8fafc]/95 backdrop-blur' : 'bg-transparent'}`}>
+      <nav className="section-shell flex h-[76px] items-center justify-between" aria-label="Primary navigation">
+        <a href="#top" className="text-sm font-semibold tracking-tight text-slate-950" onClick={() => setOpen(false)}>
+          Davidson<span className="text-sky-700">.</span>
         </a>
-
-        <div className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="hover-roll"
-            >
-              <span>{link.label}</span>
-              <span className="text-sky-400">{link.label}</span>
-            </a>
-          ))}
-          <div className="flex items-center gap-3 ml-4 pl-4 border-l border-white/10">
-            <a
-              href={PERSONAL_INFO.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-400 hover:text-sky-400 transition-colors"
-              aria-label="GitHub"
-            >
-              <Github className="w-4 h-4" />
-            </a>
-            <a
-              href={PERSONAL_INFO.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-400 hover:text-sky-400 transition-colors"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="w-4 h-4" />
-            </a>
-            <a
-              href={`mailto:${PERSONAL_INFO.email}`}
-              className="text-slate-400 hover:text-sky-400 transition-colors"
-              aria-label="Email"
-            >
-              <Mail className="w-4 h-4" />
-            </a>
-          </div>
+        <div className="hidden items-center gap-8 md:flex">
+          {links.map((link) => <a key={link.href} href={link.href} className="text-sm text-slate-600 transition hover:text-sky-700">{link.label}</a>)}
+          <a href={PERSONAL_INFO.resumePdf} download className="inline-flex min-h-11 items-center gap-2 rounded-full bg-slate-950 px-4 text-sm font-semibold text-white transition hover:bg-sky-800">
+            Resume <ArrowUpRight className="h-4 w-4" />
+          </a>
         </div>
-
-        <button
-          className="md:hidden text-slate-300"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-          aria-expanded={mobileOpen}
-          aria-controls="mobile-menu"
-        >
-          {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        <button className="inline-flex min-h-11 min-w-11 items-center justify-center text-slate-700 md:hidden" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? 'Close menu' : 'Open menu'}>
+          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
-      </div>
-
-      {mobileOpen && (
-        <div id="mobile-menu" className="md:hidden bg-[#0f172a]/95 backdrop-blur-xl border-t border-white/5 px-6 py-6">
-          <div className="flex flex-col gap-4">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="font-mono text-sm uppercase tracking-widest text-slate-400 hover:text-sky-400 transition-colors"
-                onClick={() => setMobileOpen(false)}
-              >
-                {link.label}
-              </a>
-            ))}
-            <div className="flex items-center gap-4 pt-4 border-t border-white/10">
-              <a href={PERSONAL_INFO.github} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-sky-400">
-                <Github className="w-5 h-5" />
-              </a>
-              <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-sky-400">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href={`mailto:${PERSONAL_INFO.email}`} className="text-slate-400 hover:text-sky-400">
-                <Mail className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
-    </nav>
+      </nav>
+      {open && <div id="mobile-menu" className="border-t bg-[#f8fafc] px-6 py-5 md:hidden"><div className="section-shell flex flex-col gap-4 px-0">{links.map((link) => <a key={link.href} href={link.href} className="py-2 text-sm font-medium text-slate-700" onClick={() => setOpen(false)}>{link.label}</a>)}<a href={PERSONAL_INFO.resumePdf} download className="mt-2 inline-flex min-h-11 items-center justify-center rounded-full bg-slate-950 px-4 text-sm font-semibold text-white">Download resume</a></div></div>}
+    </header>
   );
 }

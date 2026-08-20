@@ -108,7 +108,7 @@ pdf.ln(8)
 pdf.set_font("DejaVu", "B", 11)
 pdf.set_text_color(*BLUE)
 pdf.set_x(pdf.l_margin)
-pdf.cell(pdf.usable, 5.5, "AI ENGINEER  |  AGENTIC AI DEVELOPER  |  AUTOMATION SPECIALIST")
+pdf.cell(pdf.usable, 5.5, "APPLIED AI SYSTEMS BUILDER  |  AGENTIC WORKFLOWS  |  AUTOMATION")
 pdf.ln(6)
 pdf.link_line("Email: ahuruezenmadavidson@gmail.com", "mailto:ahuruezenmadavidson@gmail.com")
 pdf.link_line("Phone: +234 906 150 5041", "tel:+2349061505041")
@@ -119,18 +119,19 @@ pdf.ln(2)
 
 pdf.section("Professional Profile")
 pdf.text_block(
-    "AI Engineer with 2+ years of hands-on experience designing and delivering production AI systems, retrieval-augmented generation pipelines, and multi-channel automation. I build systems that connect models to real operational workflows: retrieval, validation, persistence, notifications, observability, and safe human review. My work combines Python, LangChain, ChromaDB, Gemini, n8n, Supabase, AWS, and Claude Code with reliability patterns such as retries, circuit breakers, timeouts, and dual-channel alerting.",
+    "Applied AI systems builder with 2+ years designing and delivering production AI workflows, retrieval-augmented generation pipelines, and multi-channel automation. I connect models to real operational workflows: retrieval, validation, persistence, notifications, observability, and safe human review. I use Claude Code and Codex to accelerate implementation while owning architecture, testing, debugging, and delivery.",
     size=9.0, line=4.45,
 )
 pdf.ln(1)
 pdf.text_block(
-    "Target roles: AI Engineer, AI Developer, Agentic AI Engineer, RAG Engineer, and AI Automation Engineer. Open to permanent remote roles, AI startups, and teams working with US-compatible hours.",
+    "Target roles: Applied AI Engineer, Agentic AI Developer, RAG Engineer, AI Integration Engineer, and AI Automation Engineer. Open to permanent remote roles, AI startups, and teams working with US-compatible hours.",
     size=8.7, color=MUTED, line=4.2,
 )
 
 pdf.section("Technical Capabilities")
 pdf.bullet("AI systems: RAG architecture, semantic retrieval, vector embeddings, multi-agent orchestration, prompt engineering, multi-LLM integration, model evaluation, MCP, LangChain/LangGraph, CrewAI/AutoGen.")
-pdf.bullet("Engineering: Python, TypeScript, React, FastAPI, SQL, PostgreSQL/MySQL, SQLAlchemy, REST APIs, webhooks, structured validation, test-driven development, GitHub Actions CI.")
+pdf.bullet("AI-assisted development: Claude Code, OpenAI Codex, repository-level implementation, debugging, test generation, Git/GitHub workflows, and iterative delivery.")
+pdf.bullet("Technologies used: Python, TypeScript, React, FastAPI, SQL, PostgreSQL/MySQL, SQLAlchemy, REST APIs, webhooks, structured validation, pytest, and GitHub Actions CI.")
 pdf.bullet("Platforms and automation: n8n, Supabase, AWS S3, AWS CLI, CloudWatch, Gemini, Groq, OpenRouter, ChromaDB, Hugging Face embeddings, Playwright, Chrome extensions.")
 pdf.bullet("Reliability and governance: retries with exponential backoff, circuit breakers, timeouts, request tracing, health checks, human-in-the-loop gates, GDPR, NDPR, ISO 27001, privacy impact assessments.")
 

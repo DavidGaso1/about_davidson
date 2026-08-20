@@ -4,141 +4,82 @@
 
 @layer base {
   :root {
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
-    --card: 217 33% 12%;
-    --card-foreground: 210 40% 98%;
-    --popover: 217 33% 12%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 199 89% 48%;
-    --primary-foreground: 222 47% 6%;
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 55%;
-    --accent: 188 94% 43%;
-    --accent-foreground: 222 47% 6%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217 33% 20%;
-    --input: 217 33% 20%;
-    --ring: 199 89% 48%;
-    --radius: 0.625rem;
+    --color-background: #f8fafc;
+    --color-foreground: #020617;
+    --color-primary: #0f172a;
+    --color-secondary: #334155;
+    --color-accent: #0369a1;
+    --color-muted: #e8ecf1;
+    --color-border: #dbe3ec;
+    --color-card: #ffffff;
   }
 
   * {
-    @apply border-border;
+    border-color: var(--color-border);
   }
 
   :focus-visible {
-    outline: 2px solid #38bdf8;
+    outline: 2px solid var(--color-accent);
     outline-offset: 3px;
   }
 
   html {
     scroll-behavior: smooth;
+    background: var(--color-background);
   }
 
   body {
-    @apply bg-[#0f172a] text-[#e2e8f0] antialiased;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    @apply antialiased;
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
     overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', system-ui, sans-serif;
-    color: #f8fafc;
+    font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+    color: var(--color-primary);
   }
 
-  code, .font-mono {
-    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  a, button, input, textarea {
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
 @layer components {
-  .glass-card {
-    @apply bg-[#1e293b]/70 backdrop-blur-xl border border-white/5 rounded-xl;
+  .section-shell {
+    @apply mx-auto w-full max-w-6xl px-6 md:px-10;
   }
 
-  .text-gradient {
-    @apply bg-gradient-to-r from-sky-400 to-cyan-400 bg-clip-text text-transparent;
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--color-accent)];
   }
 
-  .hover-lift {
-    @apply transition-all duration-300;
+  .editorial-card {
+    @apply border bg-white transition duration-300;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
   }
-  .hover-lift:hover {
-    @apply -translate-y-1;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  .editorial-card:hover {
+    @apply -translate-y-1 border-slate-300;
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
   }
 }
 
 .scroll-reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(12px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 .scroll-reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.scroll-reveal-delay-1 { transition-delay: 0.1s; }
-.scroll-reveal-delay-2 { transition-delay: 0.2s; }
-.scroll-reveal-delay-3 { transition-delay: 0.3s; }
-.scroll-reveal-delay-4 { transition-delay: 0.4s; }
-.scroll-reveal-delay-5 { transition-delay: 0.5s; }
-
-.scrollbar-none {
-  scrollbar-width: none;
-}
-.scrollbar-none::-webkit-scrollbar {
-  display: none;
-}
-
-.hero-tech-grid {
-  background-image: linear-gradient(rgba(148, 163, 184, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.055) 1px, transparent 1px);
-  background-size: 52px 52px;
-  mask-image: linear-gradient(to bottom, transparent, black 15%, black 82%, transparent);
-  animation: grid-drift 22s linear infinite;
-}
-
-.hero-flow-line {
-  stroke-dasharray: 5 18;
-  stroke-dashoffset: 0;
-  animation: flow-drift 16s linear infinite;
-}
-
-.hero-flow-line-delay {
-  animation-delay: -7s;
-}
-
-.hero-node-pulse {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: node-pulse 2.8s ease-in-out infinite;
-}
-
-.hero-node-delay {
-  animation-delay: -1.4s;
-}
-
-@keyframes grid-drift {
-  from { background-position: 0 0, 0 0; }
-  to { background-position: 52px 52px, 52px 52px; }
-}
-
-@keyframes flow-drift {
-  from { stroke-dashoffset: 0; }
-  to { stroke-dashoffset: -92; }
-}
-
-@keyframes node-pulse {
-  0%, 100% { opacity: 0.35; transform: scale(0.8); }
-  50% { opacity: 1; transform: scale(1.5); }
-}
+.scroll-reveal-delay-1 { transition-delay: 0.05s; }
+.scroll-reveal-delay-2 { transition-delay: 0.1s; }
+.scroll-reveal-delay-3 { transition-delay: 0.15s; }
+.scroll-reveal-delay-4 { transition-delay: 0.2s; }
+.scroll-reveal-delay-5 { transition-delay: 0.25s; }
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -150,65 +91,27 @@
     transition-duration: 0.01ms !important;
   }
 
-  .hero-tech-grid,
-  .hero-flow-line,
-  .hero-node-pulse {
-    animation: none;
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
   }
-}
-
-.hover-roll {
-  font-family: 'JetBrains Mono', monospace;
-  text-transform: uppercase;
-  font-size: 13px;
-  letter-spacing: 1.5px;
-  position: relative;
-  overflow: hidden;
-  height: 20px;
-  display: inline-flex;
-  flex-direction: column;
-  cursor: pointer;
-  color: #94a3b8;
-  transition: color 0.3s ease;
-}
-.hover-roll span {
-  display: block;
-  line-height: 20px;
-  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
-}
-.hover-roll:hover span {
-  transform: translateY(-100%);
-}
-.hover-roll:hover {
-  color: #38bdf8;
-}
-
-@keyframes caret-blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-.terminal-caret::after {
-  content: '|';
-  margin-left: 2px;
-  color: #38bdf8;
-  animation: caret-blink 1s step-end infinite;
 }
 
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #cbd5e1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: #94a3b8;
 }
 
 ::selection {
-  background: rgba(56, 189, 248, 0.3);
-  color: #f8fafc;
+  background: #bae6fd;
+  color: #0f172a;
 }

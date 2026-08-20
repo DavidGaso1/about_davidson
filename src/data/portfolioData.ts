@@ -1,13 +1,13 @@
 export const PERSONAL_INFO = {
   name: "Ahuruezenma Davidson Chiemezuo",
-  title: "Agentic AI Developer",
-  tagline: "Building intelligent systems, one agent at a time.",
+  title: "Applied AI Systems Builder",
+  tagline: "Turning AI ideas into systems people can rely on.",
   location: "Abuja, Nigeria",
   email: "ahuruezenmadavidson@gmail.com",
   phone: "+2349061505041",
   github: "https://github.com/DavidGaso1",
   linkedin: "https://linkedin.com/in/davidson-ahuruezenma-33a773294",
-  summary: "Agentic AI Developer with 2+ years building production multi-agent systems and automation pipelines using Claude Code, n8n, and RAG architecture. Skilled in multi-LLM orchestration, vector-based retrieval systems, and production reliability engineering including retry logic, circuit breakers, and dual-channel alerting. Seeking a permanent remote role at an AI startup where I can architect and scale autonomous, tool-using AI systems.",
+  summary: "Applied AI systems builder with 2+ years designing grounded AI workflows, retrieval systems, and business automations. I use Claude Code and Codex to accelerate implementation while owning architecture, validation, debugging, safety boundaries, and delivery.",
   bioShort: "I bridge AI innovation with data-driven automation. With a foundation in Sociology & Anthropology, I bring a unique human-centric lens to building intelligent systems that actually work for people.",
   avatar: "/profile.jpg",
   resumePdf: "/Ahuruezenma_Davidson_Chiemezuo_Resume.pdf",
@@ -484,7 +484,7 @@ export const PROJECTS = [
 ];
 
 // One source of truth for the portfolio's recruiter-facing featured-project order.
-export const FEATURED_PROJECT_IDS = [6, 4, 9];
+export const FEATURED_PROJECT_IDS = [6, 11, 4, 1];
 
 export const CERTIFICATIONS = [
   {

@@ -1,353 +1,51 @@
 import { useEffect, useRef, useState } from 'react';
-import { FEATURED_PROJECT_IDS, PROJECTS } from '../data/portfolioData';
-import { ExternalLink, Github, X, ChevronRight, Sparkles, BarChart3 } from 'lucide-react';
+import { ArrowUpRight, Check, Github, X } from 'lucide-react';
+import { PROJECTS } from '../data/portfolioData';
 
-function StatusBadge({ status }: { status: string }) {
-  const ready = status !== 'under-work';
-  const label = status === 'showcase-ready' ? 'Showcase Ready' : ready ? 'Ready' : 'In Progress';
-  return (
-    <span
-      className={`inline-flex items-center gap-1.5 px-2 py-1 text-[10px] font-mono rounded border ${
-        ready
-          ? 'bg-emerald-500/10 text-emerald-300 border-emerald-500/20'
-          : 'bg-amber-500/10 text-amber-300 border-amber-500/20'
-      }`}
-    >
-      <span className={`w-1.5 h-1.5 rounded-full ${ready ? 'bg-emerald-400' : 'bg-amber-400'}`} />
-      {label}
-    </span>
-  );
-}
-
-function RowCard({
-  project,
-  onClick,
-  amber,
-}: {
-  project: (typeof PROJECTS)[0];
-  onClick: () => void;
-  amber?: boolean;
-}) {
-  return (
-    <div
-      className={`glass-card p-5 hover-lift group cursor-pointer ${amber ? 'border-amber-500/25' : ''}`}
-      onClick={onClick}
-    >
-      <div className="flex items-start justify-between gap-4">
-        <div className="flex-1">
-          <div className="flex flex-wrap items-center gap-2 mb-1">
-            <h4 className="font-semibold text-slate-100 group-hover:text-sky-400 transition-colors">
-              {project.title}
-            </h4>
-            <StatusBadge status={project.status} />
-          </div>
-          <p className="text-sm text-slate-400 line-clamp-2 mb-3">{project.description}</p>
-          <div className="flex flex-wrap gap-1.5">
-            {project.tech.slice(0, 3).map((t) => (
-              <span key={t} className="px-2 py-0.5 text-[10px] font-mono bg-white/5 text-slate-400 rounded">
-                {t}
-              </span>
-            ))}
-          </div>
-        </div>
-        {project.github && (
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-slate-500 hover:text-sky-400 transition-colors"
-            onClick={(e) => e.stopPropagation()}
-            aria-label="View on GitHub"
-          >
-            <Github className="w-4 h-4" />
-          </a>
-        )}
-      </div>
-    </div>
-  );
-}
+const featuredIds = [6, 11, 4, 1];
+const featured = featuredIds.map((id) => PROJECTS.find((project) => project.id === id)).filter(Boolean) as typeof PROJECTS;
+const archiveIds = [9, 2, 3, 10, 12, 15, 16, 13, 14, 7, 8];
 
 export function Projects() {
   const sectionRef = useRef<HTMLElement>(null);
-  const [selectedProject, setSelectedProject] = useState<typeof PROJECTS[0] | null>(null);
+  const [selected, setSelected] = useState<typeof PROJECTS[number] | null>(null);
 
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            section.querySelectorAll('.scroll-reveal').forEach((el) => {
-              el.classList.add('visible');
-            });
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+    const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
+      if (entry.isIntersecting) section.querySelectorAll('.scroll-reveal').forEach((item) => item.classList.add('visible'));
+    }), { threshold: 0.08 });
     observer.observe(section);
     return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
-    if (!selectedProject) return;
-    const handleKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setSelectedProject(null);
-    };
-    document.addEventListener('keydown', handleKey);
-    const previousOverflow = document.body.style.overflow;
+    if (!selected) return;
+    const close = (event: KeyboardEvent) => { if (event.key === 'Escape') setSelected(null); };
+    document.addEventListener('keydown', close);
+    const previous = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
-    return () => {
-      document.removeEventListener('keydown', handleKey);
-      document.body.style.overflow = previousOverflow;
-    };
-  }, [selectedProject]);
+    return () => { document.removeEventListener('keydown', close); document.body.style.overflow = previous; };
+  }, [selected]);
 
-  // Lead with the projects most relevant to AI Engineer / RAG roles.
-  // Keep the automated news digest at the end of the supporting-project list.
-  const featured = FEATURED_PROJECT_IDS
-    .map((id) => PROJECTS.find((project) => project.id === id))
-    .filter((project): project is (typeof PROJECTS)[number] => Boolean(project));
-  const featuredIdSet = new Set(featured.map((project) => project.id));
-  const others = PROJECTS
-    .filter((p) => !featuredIdSet.has(p.id) && p.status !== 'under-work')
-    .sort((a, b) => (a.id === 10 ? 1 : b.id === 10 ? -1 : a.id - b.id));
-  const inProgress = PROJECTS.filter((p) => p.status === 'under-work');
-
-  return (
-    <section id="projects" ref={sectionRef} className="relative py-24 md:py-32 bg-[#0f172a]">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 scroll-reveal">
-          <div>
-            <span className="font-mono text-xs text-sky-400 uppercase tracking-[0.2em]">
-              Portfolio
-            </span>
-            <h2 className="text-3xl md:text-5xl font-bold mt-4">
-              Featured <span className="text-gradient">Projects</span>
-            </h2>
-          </div>
-          <a
-            href="https://github.com/DavidGaso1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-mono text-slate-400 hover:text-sky-400 transition-colors group"
-          >
-            View all on GitHub
-            <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </a>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          {featured.map((project, idx) => (
-            <div
-              key={project.id}
-              className={`scroll-reveal scroll-reveal-delay-${idx + 1} glass-card overflow-hidden hover-lift group cursor-pointer`}
-              onClick={() => setSelectedProject(project)}
-            >
-              <div className="relative h-40 overflow-hidden bg-gradient-to-br from-sky-500/10 via-purple-500/10 to-cyan-500/10">
-                {project.image ? (
-                  <img
-                    src={project.image}
-                    alt={`${project.title} preview`}
-                    className="absolute inset-0 h-full w-full object-cover"
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <Sparkles className="w-8 h-8 text-sky-400/50 mx-auto mb-2" />
-                      <span className="font-mono text-[10px] uppercase tracking-widest text-slate-500">
-                        {project.category}
-                      </span>
-                    </div>
-                  </div>
-                )}
-                <div className="absolute inset-x-3 top-3 flex items-start justify-between gap-2">
-                  <StatusBadge status={project.status} />
-                  {project.client && (
-                    <span className="px-2 py-1 text-[10px] font-mono bg-sky-500/20 text-sky-300 rounded border border-sky-500/20">
-                      {project.client}
-                    </span>
-                  )}
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-slate-100 mb-2 group-hover:text-sky-400 transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-sm text-slate-400 leading-relaxed mb-4 line-clamp-3">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-1.5">
-                  {project.tech.slice(0, 4).map((t) => (
-                    <span
-                      key={t}
-                      className="px-2 py-0.5 text-[10px] font-mono bg-white/5 text-slate-400 rounded border border-white/5"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                  {project.tech.length > 4 && (
-                    <span className="px-2 py-0.5 text-[10px] font-mono text-slate-500">
-                      +{project.tech.length - 4}
-                    </span>
-                  )}
-                </div>
-                <div className="mt-4 flex items-center gap-1 text-xs font-mono text-sky-400 group-hover:gap-2 transition-all">
-                  View Details <ChevronRight className="w-3 h-3" />
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {others.length > 0 && (
-          <div className="scroll-reveal">
-            <h3 className="text-sm font-mono text-slate-500 uppercase tracking-widest mb-6">
-              Other Projects
-            </h3>
-            <div className="grid md:grid-cols-2 gap-4">
-              {others.map((project) => (
-                <RowCard
-                  key={project.id}
-                  project={project}
-                  onClick={() => setSelectedProject(project)}
-                />
-              ))}
-            </div>
-          </div>
-        )}
-
-        {inProgress.length > 0 && (
-          <div className="scroll-reveal mt-12">
-            <h3 className="text-sm font-mono text-amber-400 uppercase tracking-widest mb-6">
-              In Progress
-            </h3>
-            <div className="grid md:grid-cols-2 gap-4">
-              {inProgress.map((project) => (
-                <RowCard
-                  key={project.id}
-                  project={project}
-                  onClick={() => setSelectedProject(project)}
-                  amber
-                />
-              ))}
-            </div>
-          </div>
-        )}
+  return <section id="projects" ref={sectionRef} className="bg-white py-24 md:py-32">
+    <div className="section-shell">
+      <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <div><p className="eyebrow">Selected work</p><h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-[-0.045em] md:text-6xl">A few systems, built with care.</h2></div>
+        <a href="https://github.com/DavidGaso1" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-900">Browse GitHub <ArrowUpRight className="h-4 w-4" /></a>
       </div>
-
-      {selectedProject && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
-          onClick={() => setSelectedProject(null)}
-        >
-          <div
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="project-modal-title"
-            className="glass-card max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 md:p-8"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-start justify-between mb-6">
-              <div>
-                <span className="font-mono text-[10px] uppercase tracking-widest text-sky-400">
-                  {selectedProject.category} {selectedProject.client && `\u2022 ${selectedProject.client}`}
-                </span>
-                <h3 id="project-modal-title" className="text-2xl font-bold text-slate-100 mt-1">
-                  {selectedProject.title}
-                </h3>
-                <div className="mt-2">
-                  <StatusBadge status={selectedProject.status} />
-                </div>
-              </div>
-              <button
-                onClick={() => setSelectedProject(null)}
-                className="text-slate-400 hover:text-slate-200 transition-colors"
-                aria-label="Close"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            <p className="text-slate-300 leading-relaxed mb-6">
-              {selectedProject.longDescription}
-            </p>
-
-            {selectedProject.metrics && selectedProject.metrics.length > 0 && (
-              <div className="mb-6">
-                <h4 className="text-sm font-semibold text-slate-200 mb-3 flex items-center gap-2">
-                  <BarChart3 className="w-4 h-4 text-sky-400" />
-                  Impact
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {selectedProject.metrics.map((m, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 text-xs font-mono bg-emerald-500/10 text-emerald-400 rounded border border-emerald-500/20"
-                    >
-                      {m}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            <div className="mb-6">
-              <h4 className="text-sm font-semibold text-slate-200 mb-3">Key Highlights</h4>
-              <ul className="space-y-2">
-                {selectedProject.highlights.map((h, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-slate-400">
-                    <span className="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0" />
-                    {h}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-semibold text-slate-200 mb-3">Tech Stack</h4>
-              <div className="flex flex-wrap gap-2">
-                {selectedProject.tech.map((t) => (
-                  <span
-                    key={t}
-                    className="px-3 py-1 text-xs font-mono bg-sky-500/10 text-sky-400 rounded border border-sky-500/20"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-6 flex flex-wrap gap-3">
-              {selectedProject.liveUrl && (
-                <a
-                  href={selectedProject.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-sky-500 hover:bg-sky-400 text-[#0f172a] font-semibold rounded-xl transition-colors"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  Live Demo
-                </a>
-              )}
-              {selectedProject.github && (
-                <a
-                  href={selectedProject.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-sky-500/10 hover:bg-sky-500/20 border border-sky-500/30 text-sky-300 font-semibold rounded-xl transition-colors"
-                >
-                  <Github className="w-4 h-4" />
-                  View on GitHub
-                </a>
-              )}
-            </div>
+      <div className="grid gap-5 lg:grid-cols-2">
+        {featured.map((project, index) => <button key={project.id} type="button" onClick={() => setSelected(project)} className={`editorial-card scroll-reveal scroll-reveal-delay-${index + 1} group text-left ${index === 0 ? 'lg:col-span-2 lg:grid lg:grid-cols-[1.05fr_0.95fr]' : ''}`}>
+          <div className={`relative min-h-56 overflow-hidden bg-slate-950 ${index === 0 ? 'lg:min-h-[360px]' : ''}`}>
+            {project.image ? <img src={project.image} alt={`${project.title} interface preview`} className="absolute inset-0 h-full w-full object-cover opacity-80 transition duration-500 group-hover:scale-[1.03]" loading="lazy" /> : <div className="absolute inset-0 flex flex-col justify-end bg-[linear-gradient(135deg,#0f172a,#075985)] p-7 text-white"><span className="text-6xl font-semibold tracking-[-0.08em] opacity-20">0{index + 1}</span><span className="mt-auto text-xs uppercase tracking-[0.18em] text-sky-200">{project.category}</span></div>}
+            <span className="absolute left-5 top-5 rounded-full bg-white/95 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-700">0{index + 1}</span>
           </div>
-        </div>
-      )}
-    </section>
-  );
+          <div className="flex flex-col justify-between p-7"><div><p className="text-xs font-semibold uppercase tracking-[0.16em] text-sky-700">{project.client || project.category}</p><h3 className="mt-3 text-2xl font-semibold tracking-[-0.035em] text-slate-950">{project.title}</h3><p className="mt-4 max-w-xl text-sm leading-6 text-slate-600">{project.description}</p></div><div className="mt-8 flex items-center justify-between gap-4"><div className="flex flex-wrap gap-2">{project.tech.slice(0, 3).map((tech) => <span key={tech} className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-600">{tech}</span>)}</div><span className="shrink-0 text-sm font-semibold text-sky-700 transition group-hover:translate-x-1">Read case study →</span></div></div>
+        </button>)}
+      </div>
+      <div className="mt-20 border-t pt-8"><div className="flex flex-col justify-between gap-4 md:flex-row md:items-end"><div><p className="eyebrow">Additional work</p><h3 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">More experiments and production workflows.</h3></div><p className="max-w-md text-sm leading-6 text-slate-500">A compact archive for the rest of the work. The main story stays focused on the projects most relevant to applied AI roles.</p></div><div className="mt-8 grid gap-x-8 md:grid-cols-2">{archiveIds.map((id) => { const project = PROJECTS.find((item) => item.id === id); if (!project) return null; return <button key={project.id} type="button" onClick={() => setSelected(project)} className="group flex items-center justify-between border-b py-4 text-left"><span><span className="block text-sm font-semibold text-slate-800 group-hover:text-sky-700">{project.title}</span><span className="mt-1 block text-xs text-slate-500">{project.category}</span></span><ArrowUpRight className="h-4 w-4 text-slate-400 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-sky-700" /></button>; })}</div></div>
+    </div>
+    {selected && <div className="fixed inset-0 z-[60] flex items-end justify-center bg-slate-950/50 p-0 backdrop-blur-sm sm:items-center sm:p-6" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setSelected(null); }}><article role="dialog" aria-modal="true" aria-labelledby="case-study-title" className="max-h-[92vh] w-full max-w-3xl overflow-y-auto bg-white p-7 shadow-2xl sm:p-10"><div className="flex items-start justify-between gap-6"><div><p className="eyebrow">{selected.client || selected.category}</p><h2 id="case-study-title" className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-slate-950">{selected.title}</h2></div><button type="button" onClick={() => setSelected(null)} className="inline-flex min-h-11 min-w-11 items-center justify-center border text-slate-500 hover:text-slate-950" aria-label="Close case study"><X className="h-5 w-5" /></button></div><p className="mt-7 text-base leading-7 text-slate-600">{selected.longDescription}</p><div className="mt-8 grid gap-8 md:grid-cols-2"><div><h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-500">Evidence</h3><ul className="mt-4 space-y-3">{selected.highlights.map((highlight) => <li key={highlight} className="flex gap-3 text-sm leading-6 text-slate-700"><Check className="mt-1 h-4 w-4 shrink-0 text-sky-700" />{highlight}</li>)}</ul></div><div><h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-500">Tools used</h3><div className="mt-4 flex flex-wrap gap-2">{selected.tech.map((tech) => <span key={tech} className="rounded-full border bg-slate-50 px-3 py-1.5 text-xs text-slate-600">{tech}</span>)}</div></div></div><div className="mt-9 flex flex-wrap gap-3">{selected.github && <a href={selected.github} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-2 rounded-full bg-slate-950 px-5 text-sm font-semibold text-white hover:bg-sky-800"><Github className="h-4 w-4" />View repository</a>}{selected.liveUrl && <a href={selected.liveUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-2 rounded-full border px-5 text-sm font-semibold text-slate-800 hover:border-slate-500">Live demo <ArrowUpRight className="h-4 w-4" /></a>}</div></article></div>}
+  </section>;
 }
