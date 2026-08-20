@@ -491,56 +491,48 @@ export const CERTIFICATIONS = [
     title: "Claude Code 101",
     issuer: "Anthropic Education",
     year: "2026",
-    category: "AI"
+    category: "AI",
+    verificationUrl: "https://verify.skilljar.com/c/mf8ey62d3y6c",
+    image: "/certificates/claude-code-101.jpg"
   },
   {
-    title: "Introduction to Subagents",
+    title: "Introduction to subagents",
     issuer: "Anthropic Education",
     year: "2026",
-    category: "AI"
+    category: "AI",
+    verificationUrl: "https://verify.skilljar.com/c/7io8hwnrzbyn",
+    image: "/certificates/introduction-to-subagents.jpg"
   },
   {
-    title: "Introduction to Agent Skills",
+    title: "Introduction to agent skills",
     issuer: "Anthropic Education",
     year: "2026",
-    category: "AI"
+    category: "AI",
+    verificationUrl: "https://verify.skilljar.com/c/pxgvaytstjrd",
+    image: "/certificates/introduction-to-agent-skills.jpg"
   },
   {
-    title: "AI Fluency: Framework and Foundations",
+    title: "AI Fluency: Framework & Foundations",
     issuer: "Anthropic Education",
     year: "2026",
-    category: "AI"
+    category: "AI",
+    verificationUrl: "https://verify.skilljar.com/c/qngargc3mcvq",
+    image: "/certificates/ai-fluency-framework-foundations.jpg"
   },
   {
     title: "Claude 101",
     issuer: "Anthropic Education",
     year: "2026",
-    category: "AI"
-  },
-  {
-    title: "Workflow Automation Training",
-    issuer: "Udemy",
-    year: "2025",
-    category: "Automation"
-  },
-  {
-    title: "Data Protection Officer Training",
-    issuer: "Data Protection Academy",
-    year: "2024",
-    category: "Compliance"
-  },
-  {
-    title: "AWS S3 Fundamentals",
-    issuer: "AWS Training",
-    year: "2022",
-    category: "Cloud"
+    category: "AI",
+    verificationUrl: "https://verify.skilljar.com/c/wpuhbocaj8hi",
+    image: "/certificates/claude-101.jpg"
   }
 ];
 
 export const STATS = [
   { label: "Production Systems", value: "3+" },
   { label: "Years Experience", value: "2+" },
-  { label: "Certifications", value: "8+" },
+  { label: "Certifications", value: "5" },
   { label: "Clients Served", value: "3" }
 ];
 

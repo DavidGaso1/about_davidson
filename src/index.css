@@ -4,14 +4,16 @@
 
 @layer base {
   :root {
-    --color-background: #f8fafc;
-    --color-foreground: #020617;
-    --color-primary: #0f172a;
-    --color-secondary: #334155;
-    --color-accent: #0369a1;
-    --color-muted: #e8ecf1;
-    --color-border: #dbe3ec;
-    --color-card: #ffffff;
+    --color-background: #080d19;
+    --color-foreground: #e6edf7;
+    --color-primary: #f8fbff;
+    --color-secondary: #9aaac0;
+    --color-accent: #38bdf8;
+    --color-accent-strong: #22c55e;
+    --color-muted: #111a2b;
+    --color-border: rgba(148, 163, 184, 0.2);
+    --color-card: #0f192b;
+    --color-card-hover: #142139;
   }
 
   * {
@@ -32,12 +34,12 @@
     @apply antialiased;
     background: var(--color-background);
     color: var(--color-foreground);
-    font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    font-family: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
     overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+    font-family: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
     color: var(--color-primary);
   }
 
@@ -56,14 +58,30 @@
   }
 
   .editorial-card {
-    @apply border bg-white transition duration-300;
-    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+    @apply border transition duration-300;
+    background: var(--color-card);
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.18);
   }
   .editorial-card:hover {
-    @apply -translate-y-1 border-slate-300;
-    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+    @apply -translate-y-1;
+    border-color: rgba(56, 189, 248, 0.42);
+    background: var(--color-card-hover);
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.28), 0 0 30px rgba(56, 189, 248, 0.08);
   }
 }
+
+/* The case-study dialog is rendered from a compact component line; keep its
+   inherited utility classes readable against the dark system surface. */
+article[role='dialog'] {
+  background: var(--color-card) !important;
+  color: var(--color-foreground);
+}
+article[role='dialog'] [class~='text-slate-950'] { color: #f8fbff !important; }
+article[role='dialog'] [class~='text-slate-800'],
+article[role='dialog'] [class~='text-slate-700'] { color: #cbd5e1 !important; }
+article[role='dialog'] [class~='text-slate-600'] { color: #a8b6c9 !important; }
+article[role='dialog'] [class~='bg-slate-50'] { background: rgba(255, 255, 255, 0.06) !important; }
+article[role='dialog'] [class~='text-sky-700'] { color: #7dd3fc !important; }
 
 .scroll-reveal {
   opacity: 0;
@@ -101,17 +119,17 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #080d19;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #334155;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #38bdf8;
 }
 
 ::selection {
-  background: #bae6fd;
-  color: #0f172a;
+  background: rgba(56, 189, 248, 0.3);
+  color: #f8fbff;
 }

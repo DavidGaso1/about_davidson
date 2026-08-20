@@ -33,7 +33,7 @@ export function Certifications() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-24 md:py-32 bg-[#0f172a]">
+    <section id="certifications" ref={sectionRef} className="relative py-24 md:py-32 bg-[#0f172a]">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16 scroll-reveal">
           <span className="font-mono text-xs text-sky-400 uppercase tracking-[0.2em]">
@@ -53,6 +53,9 @@ export function Certifications() {
                 key={`${cert.title}-${idx}`}
                 className={`scroll-reveal scroll-reveal-delay-${Math.min(idx + 1, 5)} glass-card p-5 hover-lift`}
               >
+                <a href={cert.verificationUrl} target="_blank" rel="noreferrer" className="mb-4 block overflow-hidden rounded-lg border border-white/10 bg-slate-950/60" aria-label={`Verify ${cert.title}`}>
+                  <img src={cert.image} alt={`${cert.title} certificate`} className="aspect-[4/3] w-full object-cover transition duration-300 hover:scale-105" />
+                </a>
                 <div className={`p-2 rounded-lg ${config.bg} w-fit mb-4`}>
                   <Icon className={`w-4 h-4 ${config.color}`} />
                 </div>
@@ -60,9 +63,10 @@ export function Certifications() {
                   {cert.title}
                 </h3>
                 <p className="text-xs text-slate-500 mb-2">{cert.issuer}</p>
-                <span className="font-mono text-[10px] text-slate-600">
-                  {cert.year}
-                </span>
+                <div className="flex items-center justify-between gap-3">
+                  <span className="font-mono text-[10px] text-slate-600">{cert.year}</span>
+                  <a href={cert.verificationUrl} target="_blank" rel="noreferrer" className="font-mono text-[10px] uppercase tracking-wider text-sky-400 hover:text-sky-300">Verify</a>
+                </div>
               </div>
             );
           })}
